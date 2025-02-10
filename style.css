@@ -318,11 +318,9 @@ footer {
     color: white;
     font-size: 1.5em;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.5);  /* Giv baggrund en let gennemsigtighed */
-    padding: 5px 10px;
     z-index: 10;              /* Sørg for, at teksten er synlig oven på billedet */
-    line-height: 1.2;         /* Juster linjehøjde for bedre læsbarhed */
     text-transform: uppercase; /* Gør teksten til store bogstaver */
+    white-space: nowrap;      /* Sørg for at teksten ikke brydes */
   }
   
   /* Shop Now knap */
@@ -330,15 +328,14 @@ footer {
     position: absolute;
     bottom: 10px;             /* Placer knappen nederst på billedet */
     left: 10px;               /* Placer knappen til venstre */
-    background-color: rgba(255, 255, 255, 0.7);
-    color: black;
-    padding: 5px 15px;
+    color: white;
+    font-size: 1.2em;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
     z-index: 10;              /* Sørg for, at knappen er synlig oven på billedet */
+    cursor: pointer;         /* Gør knappen interaktiv */
   }
   
   .shop-btn:hover {
-    background-color: rgba(255, 255, 255, 1);  /* Ændring ved hover */
+    text-decoration: underline;  /* Understreg knappen ved hover */
   }
