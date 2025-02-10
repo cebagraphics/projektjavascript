@@ -287,3 +287,52 @@ footer {
     background-color: #f4d4dc;
 }
 
+/* Slideshow container */
+.gallery-container {
+    display: flex;  /* Brug flexbox for at lægge billederne ved siden af hinanden */
+    gap: 0;  /* Ingen mellemrum mellem billederne */
+    overflow: hidden;  /* Skjul eventuelt overskydende billeder */
+  }
+  
+  /* Hver billede-item */
+  .gallery-item {
+    position: relative;
+    flex: 0 0 auto;  /* Sørg for at billederne ikke skalerer */
+    width: 100%;  /* Sørg for at billederne fylder containeren */
+  }
+  
+  /* Billederne */
+  .gallery-item img {
+    width: 100%;
+    height: auto;  /* Bevar forholdet på billederne */
+    display: block;  /* Fjern margin eller padding under billederne */
+    border-radius: 0;  /* Fjern rundede kanter */
+  }
+  
+  /* Tekst overlay */
+  .overlay {
+    position: absolute;
+    top: 10px;  /* Placer teksten øverst */
+    left: 10px;  /* Placer teksten til venstre */
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);  /* Giv baggrund en let gennemsigtighed */
+    padding: 5px 10px;
+  }
+  
+  .shop-btn {
+    position: absolute;
+    bottom: 10px;  /* Placer knappen nederst */
+    left: 10px;  /* Placer knappen til venstre */
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .shop-btn:hover {
+    background-color: rgba(255, 255, 255, 1); /* Ændring ved hover */
+  }
