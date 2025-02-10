@@ -18,6 +18,17 @@ main {
     margin-bottom: 40px;
 }
 
+.intro-title {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.intro-text {
+  font-size: 13px;
+  margin-left: 20px;
+  margin-top: -25px;
+}
+
 .products {
     margin-bottom: 40px;
 }
