@@ -73,8 +73,7 @@ footer {
 
 .navbar__menu {
     display: flex;
-    margin-left: auto;
-    padding-right: 70px;
+    margin-right: auto;
 }
 
 .navbar__menu-item {
@@ -88,7 +87,6 @@ footer {
 .navbar__link {
     color: var(--black);
     text-decoration-line: none;
-    margin-left: 20px;
 }
 
 .navbar__menu-item:hover {
