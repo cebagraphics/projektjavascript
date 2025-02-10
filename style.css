@@ -14,19 +14,32 @@ main {
     padding: 20px;
 }
 
+
 .intro {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
-
 .intro-title {
-  font-size: 30px;
-  margin-left: 20px;
+font-size: 30px;
+margin-left: 20px;
 }
-
 .intro-text {
-  font-size: 13px;
-  margin-left: 20px;
-  margin-top: -25px;
+font-size: 13px;
+margin-left: 20px;
+margin-top: -25px;
+}
+.intro-types {
+list-style-type: none;
+padding: 0;
+margin-top: 40px;
+margin-left: 20px;
+font-size: 13px;
+}
+.intro-types-knit {
+display: inline-block; 
+margin-right: 20px; 
+}
+li:first-child {
+text-decoration: underline; /* Understreger kun første element */
 }
 
 .products {
