@@ -18,6 +18,17 @@ main {
     margin-bottom: 40px;
 }
 
+.intro-title {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.intro-text {
+  font-size: 13px;
+  margin-left: 20px;
+  margin-top: -25px;
+}
+
 .products {
     margin-bottom: 40px;
 }
@@ -129,13 +140,7 @@ footer {
 /* =============== NAVIGATION BAR / SLUT =============== */
 
 
-/* produktside */
-
-
-/* Header */
-
-
-  /* Produktsektion */
+/* =============== PRODUKTSIDE / START =============== */
   .selected-product {
     float: left;
     background-color: #fff;
@@ -242,7 +247,7 @@ footer {
     margin-top: 100px;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   }
-
+/* =============== PRODUKTSIDE / SLUT =============== */
 
 /* =============== FARVEKNAPPER / START =============== */
 .button-container {
