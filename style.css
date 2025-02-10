@@ -14,6 +14,11 @@ main {
     padding: 20px;
 }
 
+h3 {
+  font-weight: normal;
+  font-size: 13px;
+  float: left;
+}
 
 .intro {
   margin-bottom: 40px;
@@ -307,16 +312,26 @@ footer {
 }
 
 
-/* Zoom */
-.img-zoom-lens {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  transform: scale(1.2);
-  cursor: none;
+/* ZOOM EFFEKT START */
+* {
+  box-sizing: border-box;
 }
+.selected-product-images img {
+  max-width: auto; /* Billederne tager størrelsen af deres container */
+  height: auto; /* Forholdet mellem bredde og højde bevares */
+}
+.img-magnifier-glass {
+  position: absolute;
+  border: 1px solid #b4b4b4;
+  border-radius: 50%;
+  cursor: none;
+  /* Set the size of the magnifier glass */
+  width: 200px;
+  height: 200px;
+  display: none; /* Skjul glasset indtil musen er over billedet */
+}
+
+/* ZOOM EFFEKT SLUT */
 
 .carousel {
     position: relative;
