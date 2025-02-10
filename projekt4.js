@@ -96,6 +96,7 @@ document.querySelectorAll("#product-image-1").forEach((img) => {
   
 //ZOOM EFFEKT SLUT
 
+//Skift farve på sweater //
 function changeImage(imageSrc1, imageSrc2, newText) {
     document.getElementById("product-image-1").src = imageSrc1;
     document.getElementById("product-image-2").src = imageSrc2;
@@ -116,9 +117,36 @@ function moveCarousel() {
   const offset = -currentIndex * 20; // Skubber billederne afhængigt af hvilket billede vi er på
   document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
 
+
   // Opdater indekset for næste billede
   currentIndex = (currentIndex + 1) % images.length;
 }
 
 // Start karussellen
 setInterval(moveCarousel, 3000); // Skift billede hvert 3. sekund
+
+// Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
+const shopNowButtons = document.querySelectorAll('.shop-btn');
+shopNowButtons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault(); // Forhindrer standardlinkadfærd
+    // Åbn en ny side, når knappen klikkes
+    window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
+  });
+});
+  // Hvis vi når slutningen, så hop tilbage til første billede
+  if (index >= totalSlides) {
+    index = 0;
+  }
+
+  // Hvis vi er før det første billede, så hop til sidste billede
+  if (index < 0) {
+    index = totalSlides - 1;
+  }
+
+  // Tilføj 'active' klassen til det næste billede
+  slides[index].classList.add('active');
+
+  // Opdater transform på carousel-images for at skifte billede
+  document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
+
