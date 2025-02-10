@@ -297,7 +297,6 @@ footer {
     gap: 0;                   /* Ingen mellemrum mellem billederne */
     overflow: hidden;         /* Skjul overskydende billeder, hvis de går ud over containeren */
     width: 100%;              /* Sørg for, at containeren strækker sig over hele bredden */
-    transition: transform 1s ease-in-out;
   }
   
   /* Hver billede-item */
@@ -344,3 +343,4 @@ footer {
   .shop-btn:hover {
     text-decoration: underline;  /* Understreg knappen ved hover */
   }
+
