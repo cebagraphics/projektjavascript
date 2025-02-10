@@ -313,35 +313,48 @@ footer {
 }
 
 
-/* Zoom */
-.img-zoom-lens {
+/* ZOOM EFFEKT START */
+* {
+  box-sizing: border-box;
+}
+.selected-product-images img {
+  max-width: auto; /* Billederne tager størrelsen af deres container */
+  height: auto; /* Forholdet mellem bredde og højde bevares */
+}
+.img-magnifier-glass {
   position: absolute;
-  border: 1px solid #d4d4d4;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /* Set the size of the magnifier glass */
   width: 100px;
   height: 100px;
-  border-radius: 50%;
-  transform: scale(1.2);
-  cursor: none;
+  display: none; /* Skjul glasset indtil musen er over billedet */
 }
+
+/* ZOOM EFFEKT SLUT */
 
 .carousel {
     position: relative;
-    width: 100%;
-    max-width: 800px; /* Karuselens maksimale bredde */
+    width: 80%; /* Maksimal bredde af karussellen */
+    max-width: 1000px;
     margin: 0 auto;
-    overflow: hidden; /* Sørg for, at billederne ikke stikker ud af containeren */
+    overflow: hidden; /* Skjul overskydende billeder */
   }
   
   .carousel-images {
     display: flex;
-    transition: transform 0.5s ease; /* Glidende overgang */
+    width: 100%; /* Gør containeren fleksibel, så billederne kan glide */
+    transition: transform 0.5s ease-in-out;
   }
   
   .carousel-item {
-    min-width: 20%; /* Sørg for, at billederne fylder 20% af containerens bredde */
+    width: 20%; /* Hver billede fylder 20% af containeren */
     position: relative;
-    transition: transform 0.5s ease, scale 0.5s ease; /* Glidende overgang på transform og scale */
-    margin-right: 5%; /* Afstand mellem billederne */
+    flex-shrink: 0; /* Forhindrer billederne i at blive mindre */
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
   }
   
   .carousel-item img {
@@ -349,6 +362,11 @@ footer {
     height: auto;
     display: block;
     transition: transform 0.5s ease; /* Glidende overgang på billedet */
+  }
+  
+  /* Fremhæv det aktive billede */
+  .carousel-item.active img {
+    transform: scale(1.2); /* Gør det aktive billede en smule større */
   }
   
   .overlay-text {
@@ -369,33 +387,11 @@ footer {
     text-decoration: none;
   }
   
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Forstør det aktive billede */
-  .carousel-item.active {
-    transform: scale(1.2); /* Forstør billedet med 20% */
-    z-index: 2; /* Sørg for at det aktive billede ligger øverst */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }

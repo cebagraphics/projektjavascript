@@ -1,99 +1,84 @@
 
 // ZOOM EFFEKT
 
-document.querySelectorAll("#product-image-1").forEach((img) => {
-    img.addEventListener("mouseenter", function () {
-      createZoomEffect(img);
-    });
+// ZOOM EFFEKT
+
+function magnify(imgID, zoom) {
+  var img, glass, w, h, bw;
+  img = document.getElementById(imgID);
+
+  // Create magnifier glass
+  glass = document.createElement("DIV");
+  glass.setAttribute("class", "img-magnifier-glass");
+
+  // Insert magnifier glass
+  img.parentElement.insertBefore(glass, img);
+
+  // Set background properties for the magnifier glass
+  glass.style.backgroundImage = "url('" + img.src + "')";
+  glass.style.backgroundRepeat = "no-repeat";
+  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+  bw = 3;
+  w = glass.offsetWidth / 2;
+  h = glass.offsetHeight / 2;
+
+  // Show the magnifier glass when hovering over the image
+  img.addEventListener("mouseenter", function () {
+    glass.style.display = "block";
   });
-  
-  function createZoomEffect(img) {
-    var lens = document.createElement("DIV");
-    lens.setAttribute("class", "img-zoom-lens");
-    img.parentElement.appendChild(lens);
-  
-    var cx = 2; // Zoom faktor
-    var cy = 2;
-  
-    lens.style.backgroundImage = "url('" + img.src + "')";
-    lens.style.backgroundSize = img.width * cx + "px " + img.height * cy + "px";
-  
-    function moveLens(e) {
-      e.preventDefault();
-      var pos = getCursorPos(e, img);
-      var x = pos.x - lens.offsetWidth / 2;
-      var y = pos.y - lens.offsetHeight / 2;
-  
-      if (x > img.width - lens.offsetWidth) x = img.width - lens.offsetWidth;
-      if (x < 0) x = 0;
-      if (y > img.height - lens.offsetHeight) y = img.height - lens.offsetHeight;
-      if (y < 0) y = 0;
-  
-      lens.style.left = x + "px";
-      lens.style.top = y + "px";
-      lens.style.backgroundPosition = `-${x * cx}px -${y * cy}px`;
-    }
-  
-    function getCursorPos(e, img) {
-      var a = img.getBoundingClientRect();
-      var x = e.pageX - a.left - window.pageXOffset;
-      var y = e.pageY - a.top - window.pageYOffset;
-      return { x: x, y: y };
-    }
-  
-    lens.addEventListener("mousemove", moveLens);
-    img.addEventListener("mousemove", moveLens);
-    lens.addEventListener("mouseleave", () => lens.remove());
-    img.addEventListener("mouseleave", () => lens.remove());
-  }
-  
-  document.querySelectorAll("#product-image-2").forEach((img) => {
-    img.addEventListener("mouseenter", function () {
-      createZoomEffect(img);
-    });
+
+  // Hide the magnifier glass when the mouse leaves the image
+  img.addEventListener("mouseleave", function () {
+    glass.style.display = "none";
   });
-  
-  function createZoomEffect(img) {
-    var lens = document.createElement("DIV");
-    lens.setAttribute("class", "img-zoom-lens");
-    img.parentElement.appendChild(lens);
-  
-    var cx = 2; // Zoom faktor
-    var cy = 2;
-  
-    lens.style.backgroundImage = "url('" + img.src + "')";
-    lens.style.backgroundSize = img.width * cx + "px " + img.height * cy + "px";
-  
-    function moveLens(e) {
-      e.preventDefault();
-      var pos = getCursorPos(e, img);
-      var x = pos.x - lens.offsetWidth / 2;
-      var y = pos.y - lens.offsetHeight / 2;
-  
-      if (x > img.width - lens.offsetWidth) x = img.width - lens.offsetWidth;
-      if (x < 0) x = 0;
-      if (y > img.height - lens.offsetHeight) y = img.height - lens.offsetHeight;
-      if (y < 0) y = 0;
-  
-      lens.style.left = x + "px";
-      lens.style.top = y + "px";
-      lens.style.backgroundPosition = `-${x * cx}px -${y * cy}px`;
-    }
-  
-    function getCursorPos(e, img) {
-      var a = img.getBoundingClientRect();
-      var x = e.pageX - a.left - window.pageXOffset;
-      var y = e.pageY - a.top - window.pageYOffset;
-      return { x: x, y: y };
-    }
-  
-    lens.addEventListener("mousemove", moveLens);
-    img.addEventListener("mousemove", moveLens);
-    lens.addEventListener("mouseleave", () => lens.remove());
-    img.addEventListener("mouseleave", () => lens.remove());
+
+  // Execute a function when someone moves the magnifier glass over the image
+  glass.addEventListener("mousemove", moveMagnifier);
+  img.addEventListener("mousemove", moveMagnifier);
+
+  // And also for touch screens
+  glass.addEventListener("touchmove", moveMagnifier);
+  img.addEventListener("touchmove", moveMagnifier);
+
+  function moveMagnifier(e) {
+    var pos, x, y;
+    // Prevent any other actions that may occur when moving over the image
+    e.preventDefault();
+    // Get the cursor's x and y positions
+    pos = getCursorPos(e);
+    x = pos.x;
+    y = pos.y;
+    // Prevent the magnifier glass from being positioned outside the image
+    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+    if (x < w / zoom) {x = w / zoom;}
+    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+    if (y < h / zoom) {y = h / zoom;}
+    // Set the position of the magnifier glass
+    glass.style.left = (x - w) + "px";
+    glass.style.top = (y - h) + "px";
+    // Display what the magnifier glass "sees"
+    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
   }
-  
-  
+
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    // Get the x and y positions of the image
+    a = img.getBoundingClientRect();
+    // Calculate the cursor's x and y coordinates, relative to the image
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    // Consider any page scrolling
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+
+// Execute the magnify function for both images
+magnify("product-image-1", 3);
+magnify("product-image-2", 3);
+
 //ZOOM EFFEKT SLUT
 
 //Skift farve på sweater //
@@ -103,17 +88,27 @@ function changeImage(imageSrc1, imageSrc2, newText) {
     document.querySelector(".selected-color").textContent = newText;
 }
 
-let index = 0;
+const images = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
 
-function moveSlide(direction) {
-  const slides = document.querySelectorAll('.carousel-item');
-  const totalSlides = slides.length;
+function moveCarousel() {
+  // Fjern 'active' klasse fra alle billeder
+  images.forEach((image) => image.classList.remove('active'));
 
-  // Fjern 'active' klassen fra det nuværende billede
-  slides[index].classList.remove('active');
+  // Sæt 'active' klasse på det aktuelle billede
+  images[currentIndex].classList.add('active');
 
-  // Beregn det næste indeks for slide
-  index += direction;
+  // Skub billederne til venstre, så det aktive billede er i midten
+  const offset = -currentIndex * 20; // Skubber billederne afhængigt af hvilket billede vi er på
+  document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+
+
+  // Opdater indekset for næste billede
+  currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Start karussellen
+setInterval(moveCarousel, 3000); // Skift billede hvert 3. sekund
 
 // Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
 const shopNowButtons = document.querySelectorAll('.shop-btn');
@@ -139,4 +134,4 @@ shopNowButtons.forEach(button => {
 
   // Opdater transform på carousel-images for at skifte billede
   document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
-}
+
