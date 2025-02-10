@@ -1,7 +1,7 @@
 
 // ZOOM EFFEKT
 
-document.querySelectorAll("#product-image1").forEach((img) => {
+document.querySelectorAll("#product-image-1").forEach((img) => {
     img.addEventListener("mouseenter", function () {
       createZoomEffect(img);
     });
