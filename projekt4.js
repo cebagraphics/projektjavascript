@@ -88,17 +88,27 @@ function changeImage(imageSrc1, imageSrc2, newText) {
     document.querySelector(".selected-color").textContent = newText;
 }
 
-let index = 0;
+const images = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
 
-function moveSlide(direction) {
-  const slides = document.querySelectorAll('.carousel-item');
-  const totalSlides = slides.length;
+function moveCarousel() {
+  // Fjern 'active' klasse fra alle billeder
+  images.forEach((image) => image.classList.remove('active'));
 
-  // Fjern 'active' klassen fra det nuværende billede
-  slides[index].classList.remove('active');
+  // Sæt 'active' klasse på det aktuelle billede
+  images[currentIndex].classList.add('active');
 
-  // Beregn det næste indeks for slide
-  index += direction;
+  // Skub billederne til venstre, så det aktive billede er i midten
+  const offset = -currentIndex * 20; // Skubber billederne afhængigt af hvilket billede vi er på
+  document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+
+
+  // Opdater indekset for næste billede
+  currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Start karussellen
+setInterval(moveCarousel, 3000); // Skift billede hvert 3. sekund
 
 // Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
 const shopNowButtons = document.querySelectorAll('.shop-btn');
@@ -124,4 +134,4 @@ shopNowButtons.forEach(button => {
 
   // Opdater transform på carousel-images for at skifte billede
   document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
-}
+
