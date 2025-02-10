@@ -21,7 +21,7 @@ h3 {
 }
 
 .intro {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .intro-title {
@@ -38,7 +38,7 @@ margin-top: -25px;
 .intro-types {
 list-style-type: none;
 padding: 0;
-margin-top: 40px;
+margin-top: 50px;
 margin-left: 20px;
 font-size: 13px;
 }
@@ -69,7 +69,7 @@ font-size: 13px;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    justify-content: center; /* Centrerer indholdet */
+    padding-left: 20px;
 }
 
 .product {
@@ -82,6 +82,11 @@ font-size: 13px;
 .product img {
     max-width: 100%;
     height: auto;
+    transition: opacity 0.3s;
+}
+
+.product:hover img {
+    opacity: 0.90;
 }
 
 footer {
@@ -281,6 +286,7 @@ footer {
   }
 /* =============== PRODUKTSIDE / SLUT =============== */
 
+
 /* =============== FARVEKNAPPER / START =============== */
 .button-container {
     display: flex;
@@ -327,8 +333,8 @@ footer {
   border-radius: 50%;
   cursor: none;
   /* Set the size of the magnifier glass */
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   display: none; /* Skjul glasset indtil musen er over billedet */
 }
 
