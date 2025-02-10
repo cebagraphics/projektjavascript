@@ -311,7 +311,7 @@ footer {
   /* Shop Now knap */
   .shop-btn {
     position: absolute;
-    bottom: 10px;             /* Placer knappen tættere på bunden af billedet */
+    bottom: 25px;             /* Placer knappen tættere på bunden af billedet */
     left: 10px;               /* Placer knappen til venstre */
     color: white;
     font-size: 1em;           /* Mindre tekststørrelse for knappen */
