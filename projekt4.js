@@ -91,27 +91,12 @@ document.addEventListener("DOMContentLoaded", function() {
     window.changeImage = changeImage;
 });
 
-const images = document.querySelectorAll('.carousel-item');
-let currentIndex = 0;
+const track = document.querySelector('.carousel-track');
 
-function moveCarousel() {
-  // Fjern 'active' klasse fra alle billeder
-  images.forEach((image) => image.classList.remove('active'));
-
-  // Sæt 'active' klasse på det aktuelle billede
-  images[currentIndex].classList.add('active');
-
-  // Skub billederne til venstre, så det aktive billede er i midten
-  const offset = -currentIndex * 20; // Skubber billederne afhængigt af hvilket billede vi er på
-  document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
-
-
-  // Opdater indekset for næste billede
-  currentIndex = (currentIndex + 1) % images.length;
-}
-
-// Start karussellen
-setInterval(moveCarousel, 3000); // Skift billede hvert 3. sekund
+// Når animationen gentages, flyt første billede til slutningen
+track.addEventListener('animationiteration', () => {
+  track.appendChild(track.firstElementChild);
+});
 
 // Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
 const shopNowButtons = document.querySelectorAll('.shop-btn');
