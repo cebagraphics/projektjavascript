@@ -179,33 +179,77 @@ footer {
     flex: 1;
   }
   
-  .selected-product_text {
-    font-size: 20px;
+  .selected-product-text {
+    font-size: 15px;
     color: #333;
   }
 
   .selected-price {
-    font-size: 20px;
+    font-size: 15px;
     color: #333;
 
   }
   
   .selected-color {
-    font-size: 15px;
+    font-size: 13px;
     color: #333;
   }
   
   .selected-add-to-cart {
     background-color: #fff; /* Hvid baggrund */
-    border: 2px solid #333; /* Sort kant */
+    border: 1px solid #333; /* Sort kant */
     color: #333; /* Sort tekst */
-    padding: 10px 100px;
+    padding: 14px 130px;
     cursor: pointer;
-    font-size: 18px;
-    margin-top: 40px;
+    font-size: 15px;
+    margin-top: 10px;
   
   }
   
+/* Størrelsesvalg som knapper */
+.selected-size-label {
+  font-size: 13px;
+  color: #000;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+.selected-sizes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.size-button {
+  background-color: #fff;
+  border: 1px solid #b1b0b0;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.size-button:hover {
+  background-color: #f4f4f4;
+  border-color: #000;
+}
+
+.size-button.selected {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+
+
+.selected-add-to-cart:hover {
+  background-color: #f4f4f4; /* Let grå baggrund når man hoverer */
+  border-color: #000; /* Forstærket sort kant ved hover */
+}
+
+
   /* Footer */
   .selected-footer {
     text-align: center;
@@ -214,6 +258,7 @@ footer {
     margin-top: 40px;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   }
+
 
 
 /* =============== FARVEKNAPPER / START =============== */
