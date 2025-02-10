@@ -135,3 +135,13 @@ shopNowButtons.forEach(button => {
   // Opdater transform på carousel-images for at skifte billede
   document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
 
+
+// Skifter billedern når man hover med musen
+function changeImage(element, newSrc) {
+    element.src = newSrc;
+}
+
+function restoreImage(element, originalSrc) {
+    element.src = originalSrc;
+}
+
