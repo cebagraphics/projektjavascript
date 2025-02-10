@@ -78,6 +78,11 @@ font-size: 13px;
     text-align: center;
 }
 
+.product-prize {
+  font-size: 13px;
+  float: right;
+}
+
 /* Sørger for, at billederne er responsive */
 .product img {
     max-width: 100%;
