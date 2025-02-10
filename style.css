@@ -298,7 +298,7 @@ footer {
   /* Tekst overlay */
   .overlay-text {
     position: absolute;
-    bottom: 40px;             /* Placer teksten 40px over bunden af billedet */
+    top: 10px;             /* Placer teksten 40px over bunden af billedet */
     left: 10px;               /* Placer teksten til venstre */
     color: white;
     font-size: 1.2em;         /* Medium størrelse tekst */
