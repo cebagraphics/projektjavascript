@@ -331,8 +331,8 @@ footer {
   border-radius: 50%;
   cursor: none;
   /* Set the size of the magnifier glass */
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   display: none; /* Skjul glasset indtil musen er over billedet */
 }
 
