@@ -346,78 +346,106 @@ footer {
 
 /* ZOOM EFFEKT SLUT */
 
+/* Stil containeren */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+
+/* Stil karussellen */
 .carousel {
-    position: relative;
-    width: 100%;
-    max-width: 800px; /* Karuselens maksimale bredde */
-    margin: 0 auto;
-    overflow: hidden; /* Sørg for, at billederne ikke stikker ud af containeren */
-  }
-  
-  .carousel-images {
-    display: flex;
-    transition: transform 0.5s ease; /* Glidende overgang */
-  }
-  
-  .carousel-item {
-    min-width: 20%; /* Sørg for, at billederne fylder 20% af containerens bredde */
-    position: relative;
-    transition: transform 0.5s ease, scale 0.5s ease; /* Glidende overgang på transform og scale */
-    margin-right: 5%; /* Afstand mellem billederne */
-  }
-  
-  .carousel-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease; /* Glidende overgang på billedet */
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .shop-btn {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    font-size: 1em;
-    text-decoration: none;
-  }
-  
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
-  
-  .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  /* Forstør det aktive billede */
-  .carousel-item.active {
-    transform: scale(1.2); /* Forstør billedet med 20% */
-    z-index: 2; /* Sørg for at det aktive billede ligger øverst */
-  }
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track til billederne */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Hvert billede */
+.carousel-item {
+  min-width: 20%;
+  position: relative;
+}
+
+/* Ensartede billeder */
+.carousel-item img {
+  width: 100%;
+  height: 250px; /* Gør alle billeder ens højde */
+  object-fit: cover; /* Sørger for, at billedet fylder hele rammen */
+  display: block;
+}
+
+/* Tekst-overlay */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* Materiale navn (øverst venstre) */
+.material-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Shop-knap (nederst venstre) */
+.shop-btn {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  align-self: flex-start;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* Hvid streg under teksten ved hover */
+.shop-btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+
+.shop-btn:hover::after {
+  width: 100%;
+}
+
+/* Pile-knapper */
+.prev-btn, .next-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  z-index: 100;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

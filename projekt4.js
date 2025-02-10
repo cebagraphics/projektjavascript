@@ -91,27 +91,49 @@ document.addEventListener("DOMContentLoaded", function() {
     window.changeImage = changeImage;
 });
 
-const images = document.querySelectorAll('.carousel-item');
-let currentIndex = 0;
+const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let index = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
 
-function moveCarousel() {
-  // Fjern 'active' klasse fra alle billeder
-  images.forEach((image) => image.classList.remove('active'));
-
-  // Sæt 'active' klasse på det aktuelle billede
-  images[currentIndex].classList.add('active');
-
-  // Skub billederne til venstre, så det aktive billede er i midten
-  const offset = -currentIndex * 20; // Skubber billederne afhængigt af hvilket billede vi er på
-  document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
-
-
-  // Opdater indekset for næste billede
-  currentIndex = (currentIndex + 1) % images.length;
+// Automatisk rulning
+function autoSlide() {
+  index++;
+  updateCarousel();
 }
 
-// Start karussellen
-setInterval(moveCarousel, 3000); // Skift billede hvert 3. sekund
+let slideInterval = setInterval(autoSlide, 3000); // Skift hvert 3. sekund
+
+// Opdaterer karussellen
+function updateCarousel() {
+  if (index >= totalItems) {
+    index = 0;
+  } else if (index < 0) {
+    index = totalItems - 1;
+  }
+  track.style.transform = `translateX(-${index * 20}%)`;
+}
+
+// Knapper til manuel styring
+nextBtn.addEventListener('click', () => {
+  index++;
+  updateCarousel();
+  resetInterval();
+});
+
+prevBtn.addEventListener('click', () => {
+  index--;
+  updateCarousel();
+  resetInterval();
+});
+
+// Stopper og genstarter automatisk rulning ved manuel navigation
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(autoSlide, 3000);
+}
 
 // Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
 const shopNowButtons = document.querySelectorAll('.shop-btn');
@@ -122,21 +144,7 @@ shopNowButtons.forEach(button => {
     window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
   });
 });
-  // Hvis vi når slutningen, så hop tilbage til første billede
-  if (index >= totalSlides) {
-    index = 0;
-  }
 
-  // Hvis vi er før det første billede, så hop til sidste billede
-  if (index < 0) {
-    index = totalSlides - 1;
-  }
-
-  // Tilføj 'active' klassen til det næste billede
-  slides[index].classList.add('active');
-
-  // Opdater transform på carousel-images for at skifte billede
-  document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
 
 
 // Skifter billedern når man hover med musen
