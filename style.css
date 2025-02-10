@@ -292,6 +292,7 @@ footer {
     gap: 0;                   /* Ingen mellemrum mellem billederne */
     overflow: hidden;         /* Skjul overskydende billeder, hvis de går ud over containeren */
     width: 100%;              /* Sørg for, at containeren strækker sig over hele bredden */
+    transition: transform 1s ease-in-out;
   }
   
   /* Hver billede-item */
@@ -307,7 +308,6 @@ footer {
     height: 100%;             /* Sørg for at billederne ikke bliver forvrænget */
     object-fit: cover;        /* Sørg for at billederne fylder containeren korrekt uden forvrængning */
     border-radius: 0;         /* Fjern rundede kanter */
-    transition: transform 1s ease;
   }
   
   /* Tekst overlay */
