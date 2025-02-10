@@ -313,11 +313,11 @@ footer {
   /* Tekst overlay */
   .overlay {
     position: absolute;
-    top: 10px;                /* Placer teksten tættere på toppen af billedet */
+    bottom: 10px;             /* Placer teksten nederst på billedet */
     left: 10px;               /* Placer teksten til venstre */
     color: white;
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.2em;         /* Medium størrelse tekst */
+    font-weight: 600;         /* Medium bold */
     z-index: 10;              /* Sørg for, at teksten er synlig oven på billedet */
     text-transform: uppercase; /* Gør teksten til store bogstaver */
     white-space: nowrap;      /* Sørg for at teksten ikke brydes */
@@ -326,12 +326,12 @@ footer {
   /* Shop Now knap */
   .shop-btn {
     position: absolute;
-    bottom: 10px;             /* Placer knappen nederst på billedet */
+    bottom: 0;                /* Placer knappen helt nederst på billedet */
     left: 10px;               /* Placer knappen til venstre */
     color: white;
-    font-size: 1.2em;
+    font-size: 1em;           /* Mindre tekststørrelse for knappen */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400;         /* Normal vægt på knappen */
     z-index: 10;              /* Sørg for, at knappen er synlig oven på billedet */
     cursor: pointer;         /* Gør knappen interaktiv */
   }
