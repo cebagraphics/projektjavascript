@@ -29,23 +29,6 @@ main {
   margin-top: -25px;
 }
 
-.intro-types {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 40px;
-  margin-left: 20px;
-  font-size: 13px;
-}
-
-.intro-types-knit {
-  display: inline-block; 
-  margin-right: 20px; 
-}
-
-li:first-child {
-  text-decoration: underline; /* Understreger kun første element */
-}
-
 .products {
     margin-bottom: 40px;
 }
@@ -57,7 +40,7 @@ li:first-child {
     justify-content: center; /* Centrerer indholdet */
 }
 
-.product1, .product2, .product3, .product4, .product5, .product6, .product7, .product8 {
+.product {
     width: calc(25% - 30px); /* 4 billeder pr. række */
     box-sizing: border-box;
     text-align: center;
@@ -314,6 +297,7 @@ footer {
     gap: 0;                   /* Ingen mellemrum mellem billederne */
     overflow: hidden;         /* Skjul overskydende billeder, hvis de går ud over containeren */
     width: 100%;              /* Sørg for, at containeren strækker sig over hele bredden */
+    transition: transform 1s ease-in-out;
   }
   
   /* Hver billede-item */
@@ -360,4 +344,3 @@ footer {
   .shop-btn:hover {
     text-decoration: underline;  /* Understreg knappen ved hover */
   }
-
