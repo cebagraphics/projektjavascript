@@ -51,7 +51,6 @@ footer {
 /* =============== NAVIGATION BAR =============== */
 
 .navbar {
-    grid-area: menu;
     position: fixed;
     top: 0;
     left: 0;
@@ -63,9 +62,8 @@ footer {
 }
 
 .navbar__logo img {
-    height: 70px;
-    width: 70px;
-    padding-left: 15%;
+    height: auto;
+    width: 120px;
 }
 
 .navbar__links {
@@ -80,15 +78,11 @@ footer {
 }
 
 .navbar__menu-item {
-    font-family: aileron, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: uppercase;
     list-style: none;
     letter-spacing: 1px;
     padding-left: 35px;
-    text-decoration-line: underline;
 }
 
 .navbar__link {
@@ -98,11 +92,5 @@ footer {
 }
 
 .navbar__menu-item:hover {
-    font-family: "swear-display", serif;
-    font-weight: 600;
-    font-style: normal;
-    text-transform: lowercase;
-    font-size: 18px;
-    text-decoration-line: none;
-    transition: font-family 1.2s ease;
+    text-decoration: underline;
 }
