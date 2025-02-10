@@ -377,7 +377,8 @@ footer {
 /* Ensartede billeder */
 .carousel-item img {
   width: 100%;
-  height: auto;
+  height: 250px; /* Gør alle billeder ens højde */
+  object-fit: cover; /* Sørger for, at billedet fylder hele rammen */
   display: block;
 }
 
@@ -391,7 +392,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
 }
 
 /* Materiale navn (øverst venstre) */
@@ -409,12 +410,22 @@ footer {
   color: white;
   text-decoration: none;
   align-self: flex-start;
-  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 5px;
 }
 
-/* Hover-effekt på knappen */
-.shop-btn:hover {
-  color: #ff9900;
+/* Hvid streg under teksten ved hover */
+.shop-btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+}
+
+.shop-btn:hover::after {
+  width: 100%;
 }
 
 /* Pile-knapper */
