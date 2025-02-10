@@ -307,6 +307,7 @@ footer {
     height: 100%;             /* Sørg for at billederne ikke bliver forvrænget */
     object-fit: cover;        /* Sørg for at billederne fylder containeren korrekt uden forvrængning */
     border-radius: 0;         /* Fjern rundede kanter */
+    transition: transform 1s ease;
   }
   
   /* Tekst overlay */
