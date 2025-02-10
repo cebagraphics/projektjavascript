@@ -152,12 +152,13 @@ footer {
     float: left;
     max-width: 30%;
     height: auto;
-    padding: 15px;
+    padding: 2px;
     margin-right: 40px;
+    margin-left: 10px;
   }
   
   .selected-product-details {
-    padding: 20px;
+    padding: 1px;
     flex: 1;
   }
   
