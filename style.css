@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #f8f8f8;
+    background-color: #fff;
     padding: 20px;
     text-align: center;
 }
@@ -48,50 +48,85 @@ footer {
 }
 
 
-/* =============== NAVIGATION BAR =============== */
-
+/* =============== NAVIGATION BAR / START =============== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    justify-content: space-between;
-    background: #FDFDFA;
-    z-index: 1000;
-    padding: 20px 20px 0px 20px;
-}
-
-.navbar__logo img {
-    height: auto;
-    width: 120px;
-}
-
-.navbar__links {
     display: flex;
-    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    z-index: 1000;
+    padding: 20px 0px;
+}
+
+/* Venstre side - Menu */
+.navbar__links {
+    padding-left: 25px;
 }
 
 .navbar__menu {
     display: flex;
-    margin-right: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar__menu-item {
-    font-size: 13px;
+    font-size: 11px;
     text-transform: uppercase;
-    list-style: none;
     letter-spacing: 1px;
-    padding-left: 35px;
+    padding-right: 40px;
+    list-style: none;
 }
 
 .navbar__link {
-    color: var(--black);
-    text-decoration-line: none;
+    color: black;
+    text-decoration: none;
 }
 
 .navbar__menu-item:hover {
     text-decoration: underline;
 }
+
+/* Midten - Logo */
+.navbar__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centrerer logoet */
+    padding-right: 5px;
+}
+
+.navbar__logo img {
+    height: auto;
+    width: 140px;
+    padding-top: 7px;
+}
+
+/* Højre side - Ikoner */
+.navbar__action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.action-punkter {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding-right: 25px;
+    margin: 0;
+}
+
+.navbar__action-item img {
+    width: 27px; /* Justér ikonstørrelsen */
+    height: 26px;
+}
+
+/* =============== NAVIGATION BAR / SLUT =============== */
+
 
 /* produktside */
 
