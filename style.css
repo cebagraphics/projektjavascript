@@ -318,28 +318,32 @@ footer {
   transform: scale(1.2);
   cursor: none;
 }
+
 .carousel {
     position: relative;
     width: 100%;
     max-width: 800px; /* Karuselens maksimale bredde */
     margin: 0 auto;
-    overflow: hidden; /* Sørg for, at kun én billede vises ad gangen */
+    overflow: hidden; /* Sørg for, at billederne ikke stikker ud af containeren */
   }
   
   .carousel-images {
     display: flex;
-    transition: transform 0.5s ease; /* Glidende overgang, når vi skifter billede */
+    transition: transform 0.5s ease; /* Glidende overgang */
   }
   
   .carousel-item {
-    min-width: 100%; /* Sørg for, at hvert billede fylder hele bredden */
+    min-width: 20%; /* Sørg for, at billederne fylder 20% af containerens bredde */
     position: relative;
+    transition: transform 0.5s ease, scale 0.5s ease; /* Glidende overgang på transform og scale */
+    margin-right: 5%; /* Afstand mellem billederne */
   }
   
   .carousel-item img {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.5s ease; /* Glidende overgang på billedet */
   }
   
   .overlay-text {
@@ -383,4 +387,10 @@ footer {
   
   .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Forstør det aktive billede */
+  .carousel-item.active {
+    transform: scale(1.2); /* Forstør billedet med 20% */
+    z-index: 2; /* Sørg for at det aktive billede ligger øverst */
   }

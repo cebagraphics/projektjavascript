@@ -108,6 +108,9 @@ function moveSlide(direction) {
   const slides = document.querySelectorAll('.carousel-item');
   const totalSlides = slides.length;
 
+  // Fjern 'active' klassen fra det nuværende billede
+  slides[index].classList.remove('active');
+
   // Beregn det næste indeks for slide
   index += direction;
 
@@ -121,6 +124,9 @@ function moveSlide(direction) {
     index = totalSlides - 1;
   }
 
+  // Tilføj 'active' klassen til det næste billede
+  slides[index].classList.add('active');
+
   // Opdater transform på carousel-images for at skifte billede
-  document.querySelector('.carousel-images').style.transform = `translateX(-${index * 100}%)`;
+  document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
 }
