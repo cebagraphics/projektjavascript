@@ -65,7 +65,7 @@ footer {
 
 /* Venstre side - Menu */
 .navbar__links {
-    padding-left: 25px;
+    padding-left: 35px;
 }
 
 .navbar__menu {
@@ -117,7 +117,7 @@ footer {
     list-style: none;
     display: flex;
     gap: 15px;
-    padding-right: 25px;
+    padding-right: 35px;
     margin: 0;
 }
 
@@ -153,12 +153,13 @@ footer {
     float: left;
     max-width: 30%;
     height: auto;
-    padding: 15px;
+    padding: 2px;
     margin-right: 40px;
+    margin-left: 10px;
   }
   
   .selected-product-details {
-    padding: 20px;
+    padding: 1px;
     flex: 1;
   }
   
