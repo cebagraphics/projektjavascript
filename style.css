@@ -288,3 +288,52 @@ footer {
     background-color: #f4d4dc;
 }
 
+/* Slideshow container */
+.gallery-container {
+    display: flex;
+    justify-content: flex-start;  /* Læg billederne op ad hinanden */
+    gap: 0;  /* Ingen mellemrum mellem billederne */
+    overflow: hidden;  /* Skjul eventuelt overskydende billeder */
+    position: relative;
+  }
+  
+  /* Hver billede-item */
+  .gallery-item {
+    position: relative;
+    flex: 0 0 auto;  /* Sørg for at billederne ikke skalerer */
+  }
+  
+  /* Billederne */
+  .gallery-item img {
+    width: 100%;  /* Sørg for at billederne fylder containeren */
+    height: auto;  /* Bevar billedets forhold */
+    display: block;  /* Fjern eventuel margin eller padding under billeder */
+    border-radius: 0;  /* Fjern rundede kanter */
+  }
+  
+  /* Tekst overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);  /* Halvtransparent baggrund */
+    color: white;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .shop-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .shop-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
