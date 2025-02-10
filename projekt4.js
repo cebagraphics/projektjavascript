@@ -1,9 +1,7 @@
-function changeImage(imageSrc) {
-    document.getElementById("product-image").src = imageSrc;
-}
 
+// ZOOM EFFEKT
 
-document.querySelectorAll(".selected-product-images img").forEach((img) => {
+document.querySelectorAll("#product-image1").forEach((img) => {
     img.addEventListener("mouseenter", function () {
       createZoomEffect(img);
     });
@@ -49,5 +47,6 @@ document.querySelectorAll(".selected-product-images img").forEach((img) => {
     img.addEventListener("mouseleave", () => lens.remove());
   }
   
-
+  
+//ZOOM EFFEKT SLUT
 
