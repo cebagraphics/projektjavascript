@@ -139,13 +139,22 @@ footer {
   .selected-product {
     float: left;
     background-color: #fff;
+    margin-bottom: 50px;
   }
   
+  .selected-breadcrumbs {
+    font-size: 13px;
+    color: #333;
+    margin: 10px;
+    margin-left: 15px;
+  }
+
   .selected-product-images img {
     float: left;
     max-width: 30%;
     height: auto;
     padding: 15px;
+    margin-right: 40px;
   }
   
   .selected-product-details {
@@ -229,7 +238,7 @@ footer {
     text-align: center;
     padding: 10px;
     background-color: #fff;
-    margin-top: 40px;
+    margin-top: 100px;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   }
 
