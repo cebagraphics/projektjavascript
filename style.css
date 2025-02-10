@@ -321,6 +321,8 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);  /* Giv baggrund en let gennemsigtighed */
     padding: 5px 10px;
     z-index: 10;              /* Sørg for, at teksten er synlig oven på billedet */
+    line-height: 1.2;         /* Juster linjehøjde for bedre læsbarhed */
+    text-transform: uppercase; /* Gør teksten til store bogstaver */
   }
   
   /* Shop Now knap */
