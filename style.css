@@ -128,13 +128,7 @@ footer {
 /* =============== NAVIGATION BAR / SLUT =============== */
 
 
-/* produktside */
-
-
-/* Header */
-
-
-  /* Produktsektion */
+/* =============== PRODUKTSIDE / START =============== */
   .selected-product {
     float: left;
     background-color: #fff;
@@ -241,7 +235,7 @@ footer {
     margin-top: 100px;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   }
-
+/* =============== PRODUKTSIDE / SLUT =============== */
 
 /* =============== FARVEKNAPPER / START =============== */
 .button-container {
