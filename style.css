@@ -21,7 +21,7 @@ h3 {
 }
 
 .intro {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .intro-title {
@@ -38,7 +38,7 @@ margin-top: -25px;
 .intro-types {
 list-style-type: none;
 padding: 0;
-margin-top: 40px;
+margin-top: 50px;
 margin-left: 20px;
 font-size: 13px;
 }
@@ -69,6 +69,7 @@ font-size: 13px;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    padding-left: 20px;
 }
 
 .product {
@@ -284,6 +285,7 @@ footer {
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   }
 /* =============== PRODUKTSIDE / SLUT =============== */
+
 
 /* =============== FARVEKNAPPER / START =============== */
 .button-container {

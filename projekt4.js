@@ -148,3 +148,37 @@ function restoreImage(element, originalSrc) {
     element.src = originalSrc;
 }
 
+
+// Sikrer, at størrelsesknapperne fungerer
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".size-button").forEach(button => {
+        button.addEventListener("click", function () {
+            // Fjerner "active" fra alle størrelsesknapper
+            document.querySelectorAll(".size-button").forEach(btn => btn.classList.remove("active"));
+
+            // Tilføjer "active" til den valgte knap
+            this.classList.add("active");
+        });
+    });
+});
+
+// Funktion til at tilføje produkt til kurven
+function addToCart() {
+    let imageSrc = document.getElementById("product-image-1").src; // Finder det aktuelle produktbillede
+    let selectedSizeButton = document.querySelector(".size-button.active"); // Finder den aktive størrelse
+
+    if (!selectedSizeButton) {
+        alert("Vælg venligst en størrelse før du lægger i kurven!");
+        return;
+    }
+
+    let selectedSize = selectedSizeButton.dataset.size; // Henter størrelsen fra "data-size" attributten
+
+    let product = { image: imageSrc, size: selectedSize };
+    
+    console.log("Tilføjer til kurv:", product); // Debug - tjek om det virker
+
+    cart.push(product); // Tilføjer produktet til kurven
+
+    updateCart(); // Opdaterer kurven
+}
