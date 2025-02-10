@@ -101,38 +101,3 @@ function changeImage(imageSrc1, imageSrc2, newText) {
     document.getElementById("product-image-2").src = imageSrc2;
     document.querySelector(".selected-color").textContent = newText;
 }
-
-//Slideshow
-let currentIndex = 0; // Start med første billede
-const galleryItems = document.querySelectorAll('.gallery-item');
-const totalItems = galleryItems.length;
-
-// Funktion til at animere billederne
-function moveImages() {
-  // Flyt containeren mod venstre
-  const galleryContainer = document.querySelector('.gallery-container');
-  galleryContainer.style.transition = 'transform 1s ease-in-out';
-  galleryContainer.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
-
-  // Når billederne er animeret, flyt det første billede til slutningen
-  setTimeout(() => {
-    // Flyt det første billede til slutningen af rækken
-    galleryContainer.appendChild(galleryItems[currentIndex]);
-    currentIndex = (currentIndex + 1) % totalItems; // Opdater index
-    galleryContainer.style.transition = 'none';  // Fjern overgangen
-    galleryContainer.style.transform = `translateX(0%)`;  // Reset positionen
-  }, 1000); // Vent 1 sekund, så animationen kan afsluttes
-}
-
-// Start slideshowet, der kører automatisk
-setInterval(moveImages, 3000);
-
-// Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
-const shopNowButtons = document.querySelectorAll('.shop-btn');
-shopNowButtons.forEach(button => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault(); // Forhindrer standardlinkadfærd
-    // Åbn en ny side, når knappen klikkes
-    window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
-  });
-});
