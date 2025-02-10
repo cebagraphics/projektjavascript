@@ -103,30 +103,17 @@ function changeImage(imageSrc1, imageSrc2, newText) {
     document.querySelector(".selected-color").textContent = newText;
 }
 
-//Slideshow
-let currentIndex = 0; // Start med første billede
-const galleryItems = document.querySelectorAll('.gallery-item');
-const totalItems = galleryItems.length;
+let index = 0;
 
-// Funktion til at animere billederne
-function moveImages() {
-  // Flyt containeren mod venstre
-  const galleryContainer = document.querySelector('.gallery-container');
-  galleryContainer.style.transition = 'transform 1s ease-in-out';
-  galleryContainer.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`;
+function moveSlide(direction) {
+  const slides = document.querySelectorAll('.carousel-item');
+  const totalSlides = slides.length;
 
-  // Når billederne er animeret, flyt det første billede til slutningen
-  setTimeout(() => {
-    // Flyt det første billede til slutningen af rækken
-    galleryContainer.appendChild(galleryItems[currentIndex]);
-    currentIndex = (currentIndex + 1) % totalItems; // Opdater index
-    galleryContainer.style.transition = 'none';  // Fjern overgangen
-    galleryContainer.style.transform = `translateX(0%)`;  // Reset positionen
-  }, 1000); // Vent 1 sekund, så animationen kan afsluttes
-}
+  // Fjern 'active' klassen fra det nuværende billede
+  slides[index].classList.remove('active');
 
-// Start slideshowet, der kører automatisk
-setInterval(moveImages, 3000);
+  // Beregn det næste indeks for slide
+  index += direction;
 
 // Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
 const shopNowButtons = document.querySelectorAll('.shop-btn');
@@ -137,3 +124,19 @@ shopNowButtons.forEach(button => {
     window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
   });
 });
+  // Hvis vi når slutningen, så hop tilbage til første billede
+  if (index >= totalSlides) {
+    index = 0;
+  }
+
+  // Hvis vi er før det første billede, så hop til sidste billede
+  if (index < 0) {
+    index = totalSlides - 1;
+  }
+
+  // Tilføj 'active' klassen til det næste billede
+  slides[index].classList.add('active');
+
+  // Opdater transform på carousel-images for at skifte billede
+  document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
+}

@@ -64,47 +64,56 @@
     </header>
 
     <main>
-      <div class="gallery-container">
-        <div class="gallery-item">
-          <img src="Selected femme/wool.png" alt="Wool">
-          <div class="overlay-text">WOOL</div>
-          <a href="#" class="shop-btn">SHOP NOW →</a>
+      <div class="carousel">
+        <div class="carousel-images">
+          <div class="carousel-item">
+            <img src="Selected femme/wool.png" alt="Wool" />
+            <div class="overlay-text">WOOL</div>
+            <a href="#" class="shop-btn">SHOP NOW →</a>
+          </div>
+          <div class="carousel-item">
+            <img src="Selected femme/alpaca.png" alt="Alpaca" />
+            <div class="overlay-text">ALPACA</div>
+            <a href="#" class="shop-btn">SHOP NOW →</a>
+          </div>
+          <div class="carousel-item">
+            <img src="Selected femme/mohair.png" alt="Mohair" />
+            <div class="overlay-text">MOHAIR</div>
+            <a href="#" class="shop-btn">SHOP NOW →</a>
+          </div>
+          <div class="carousel-item">
+            <img src="Selected femme/cotton.png" alt="Cotton" />
+            <div class="overlay-text">COTTON</div>
+            <a href="#" class="shop-btn">SHOP NOW →</a>
+          </div>
+          <div class="carousel-item">
+            <img src="Selected femme/merino.png" alt="Merino" />
+            <div class="overlay-text">MERINO</div>
+            <a href="#" class="shop-btn">SHOP NOW →</a>
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="Selected femme/alpaca.png" alt="Alpaca">
-          <div class="overlay-text">ALPACA</div>
-          <a href="#" class="shop-btn">SHOP NOW →</a>
-        </div>
-        <div class="gallery-item">
-          <img src="Selected femme/mohair.png" alt="Mohair">
-          <div class="overlay-text">MOHAIR</div>
-          <a href="#" class="shop-btn">SHOP NOW →</a>
-        </div>
-        <div class="gallery-item">
-          <img src="Selected femme/cotton.png" alt="Cotton">
-          <div class="overlay-text">COTTON</div>
-          <a href="#" class="shop-btn">SHOP NOW →</a>
-        </div>
-        <div class="gallery-item">
-          <img src="Selected femme/merino.png" alt="Merino">
-          <div class="overlay-text">MERINO</div>
-          <a href="#" class="shop-btn">SHOP NOW →</a>
-        </div>
+      
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
       </div>
 
       <section class="intro">
-        <h2>Moderne elegance</h2>
-        <p>
-          Striktøj er et must i den moderne kvindes garderobe, kan bruges hele
-          året rundt og giver dig mulighed for at skabe et elegant statement. Vi
-          ved, at basisstyles som disse skal være af høj kvalitet og tidløse.
-          Derfor tilbyder vi et udvalg af striktøj, der kombinerer vores
-          kærlighed til elegant og enkelt design med fashion-forward detaljer.
-          Vores striksortiment er nøje udvalgt og har noget for enhver stil.
+        <p class="intro-title">Strik til damer</p>
+        <p class="intro-text">
+          352 produkt(er)
         </p>
+          <ul class="intro-types">
+            <li class="intro-types-knit">STRIK</li>
+            <li class="intro-types-knit">PULLOVERS</li>
+            <li class="intro-types-knit">CARDIGANS</li>
+            <li class="intro-types-knit">STRIKKEDE KJOLER</li>
+            <li class="intro-types-knit">STRIBET STRIK</li>
+            <li class="intro-types-knit">KABELSTRIK</li>
+            <li class="intro-types-knit">KORTÆRMET STRIK</li>
+          </ul>
       </section>
+
       <section class="products">
-        <h2>Vores udvalg</h2>
         <div class="product-list">
           <!-- Produkt 1 -->
           <div class="product">
