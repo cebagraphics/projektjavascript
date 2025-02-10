@@ -77,16 +77,19 @@ function magnify(imgID, zoom) {
 
 // Execute the magnify function for both images
 magnify("product-image-1", 3);
-magnify("product-image-2", 3);
+
 
 //ZOOM EFFEKT SLUT
 
 //Skift farve på sweater //
-function changeImage(imageSrc1, imageSrc2, newText) {
-    document.getElementById("product-image-1").src = imageSrc1;
-    document.getElementById("product-image-2").src = imageSrc2;
-    document.querySelector(".selected-color").textContent = newText;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    function changeImage(imageSrc1, imageSrc2, newText) {
+        document.getElementById("product-image-1").src = imageSrc1;
+        document.getElementById("product-image-2").src = imageSrc2;
+        document.querySelector(".selected-color").textContent = newText;
+    }
+    window.changeImage = changeImage;
+});
 
 const images = document.querySelectorAll('.carousel-item');
 let currentIndex = 0;
@@ -135,3 +138,47 @@ shopNowButtons.forEach(button => {
   // Opdater transform på carousel-images for at skifte billede
   document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
 
+
+// Skifter billedern når man hover med musen
+function changeImage(element, newSrc) {
+    element.src = newSrc;
+}
+
+function restoreImage(element, originalSrc) {
+    element.src = originalSrc;
+}
+
+
+// Sikrer, at størrelsesknapperne fungerer
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".size-button").forEach(button => {
+        button.addEventListener("click", function () {
+            // Fjerner "active" fra alle størrelsesknapper
+            document.querySelectorAll(".size-button").forEach(btn => btn.classList.remove("active"));
+
+            // Tilføjer "active" til den valgte knap
+            this.classList.add("active");
+        });
+    });
+});
+
+// Funktion til at tilføje produkt til kurven
+function addToCart() {
+    let imageSrc = document.getElementById("product-image-1").src; // Finder det aktuelle produktbillede
+    let selectedSizeButton = document.querySelector(".size-button.active"); // Finder den aktive størrelse
+
+    if (!selectedSizeButton) {
+        alert("Vælg venligst en størrelse før du lægger i kurven!");
+        return;
+    }
+
+    let selectedSize = selectedSizeButton.dataset.size; // Henter størrelsen fra "data-size" attributten
+
+    let product = { image: imageSrc, size: selectedSize };
+    
+    console.log("Tilføjer til kurv:", product); // Debug - tjek om det virker
+
+    cart.push(product); // Tilføjer produktet til kurven
+
+    updateCart(); // Opdaterer kurven
+}
