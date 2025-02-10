@@ -40,7 +40,7 @@ main {
     justify-content: center; /* Centrerer indholdet */
 }
 
-.product {
+.product1, .product2, .product3, .product4, .product5, .product6, .product7, .product8 {
     width: calc(25% - 30px); /* 4 billeder pr. række */
     box-sizing: border-box;
     text-align: center;
