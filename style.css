@@ -296,9 +296,9 @@ footer {
   }
   
   /* Tekst overlay */
-  .overlay {
+  .overlay-text {
     position: absolute;
-    top: 10px;             /* Placer teksten nederst på billedet */
+    bottom: 40px;             /* Placer teksten 40px over bunden af billedet */
     left: 10px;               /* Placer teksten til venstre */
     color: white;
     font-size: 1.2em;         /* Medium størrelse tekst */
@@ -311,7 +311,7 @@ footer {
   /* Shop Now knap */
   .shop-btn {
     position: absolute;
-    bottom: 0;                /* Placer knappen helt nederst på billedet */
+    bottom: 10px;             /* Placer knappen tættere på bunden af billedet */
     left: 10px;               /* Placer knappen til venstre */
     color: white;
     font-size: 1em;           /* Mindre tekststørrelse for knappen */
