@@ -261,6 +261,10 @@ footer {
     background-color: #f4d4dc;
 }
 
+.beige {
+    background-color: #cbb394;
+}
+
 /* Slideshow container */
 .gallery-container {
     display: flex;            /* Brug flexbox for at placere billederne ved siden af hinanden */
