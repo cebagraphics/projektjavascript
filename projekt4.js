@@ -96,6 +96,7 @@ document.querySelectorAll("#product-image-1").forEach((img) => {
   
 //ZOOM EFFEKT SLUT
 
+//Skift farve på sweater //
 function changeImage(imageSrc1, imageSrc2, newText) {
     document.getElementById("product-image-1").src = imageSrc1;
     document.getElementById("product-image-2").src = imageSrc2;
@@ -136,8 +137,3 @@ shopNowButtons.forEach(button => {
     window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
   });
 });
-
-
-<img id="Produkt1" src="Selected femme/16074482_Sundress_773866_003.jpg" alt="Produkt" 
-     onmouseover="this.src='Selected femme/16074482_Sundress_773866_001.jpg'" 
-     onmouseout="this.src='Selected femme/16074482_Sundress_773866_003.jpg'"></img>
