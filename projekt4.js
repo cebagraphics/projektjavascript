@@ -107,21 +107,7 @@ shopNowButtons.forEach(button => {
     window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
   });
 });
-  // Hvis vi når slutningen, så hop tilbage til første billede
-  if (index >= totalSlides) {
-    index = 0;
-  }
 
-  // Hvis vi er før det første billede, så hop til sidste billede
-  if (index < 0) {
-    index = totalSlides - 1;
-  }
-
-  // Tilføj 'active' klassen til det næste billede
-  slides[index].classList.add('active');
-
-  // Opdater transform på carousel-images for at skifte billede
-  document.querySelector('.carousel-images').style.transform = `translateX(-${index * 25}%)`;
 
 
 // Skifter billedern når man hover med musen
