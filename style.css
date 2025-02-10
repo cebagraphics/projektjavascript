@@ -46,3 +46,63 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
+
+/* =============== NAVIGATION BAR =============== */
+
+.navbar {
+    grid-area: menu;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    background: #FDFDFA;
+    z-index: 1000;
+    padding: 20px 20px 0px 20px;
+}
+
+.navbar__logo img {
+    height: 70px;
+    width: 70px;
+    padding-left: 15%;
+}
+
+.navbar__links {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar__menu {
+    display: flex;
+    margin-left: auto;
+    padding-right: 70px;
+}
+
+.navbar__menu-item {
+    font-family: aileron, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    text-transform: uppercase;
+    list-style: none;
+    letter-spacing: 1px;
+    padding-left: 35px;
+    text-decoration-line: underline;
+}
+
+.navbar__link {
+    color: var(--black);
+    text-decoration-line: none;
+    margin-left: 20px;
+}
+
+.navbar__menu-item:hover {
+    font-family: "swear-display", serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: lowercase;
+    font-size: 18px;
+    text-decoration-line: none;
+    transition: font-family 1.2s ease;
+}
