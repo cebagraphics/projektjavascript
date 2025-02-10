@@ -245,19 +245,26 @@ footer {
 }
 
   /* Slideshow */
-  * {box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif;}
         .gallery-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             gap: 10px;
-            padding: 20px;
+            padding: 20px 0;
         }
         .gallery-item {
             position: relative;
-            width: 200px;
-            height: 300px;
-            overflow: hidden;
-            cursor: pointer;
+            width: 183px;
+            height: 183px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
         }
         .gallery-item img {
             width: 100%;
@@ -267,21 +274,19 @@ footer {
         }
         .overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.5);
+            top: 10px;
+            left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            background: none;
             color: white;
-            text-align: center;
-            padding: 20px 10px;
         }
         .shop-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background: white;
-            color: black;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 3px;
+            font-size: 12px;
+            font-weight: normal;
         }
