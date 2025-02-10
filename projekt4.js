@@ -182,3 +182,5 @@ function addToCart() {
 
     updateCart(); // Opdaterer kurven
 }
+
+
