@@ -10,7 +10,7 @@
   <body>
     <header class="selected-header">
       <div class="selected-logo">
-        <h1>Selected Femme</h1>
+        <br>
       </div>
 
       <nav class="navbar">
@@ -43,7 +43,7 @@
         <div class="navbar__action">
           <ul class="action-punkter">
             <li class="navbar__action-item">
-              <a href=""><img src="Selected femme/Søgeikon.png" alt="Søg" /></a>
+              <a href=""><img src="Selected femme/Søgefunktionikone.png" alt="Søg" /></a>
             </li>
             <li class="navbar__action-item">
               <a href=""
@@ -68,13 +68,15 @@
     <main>
       <section class="selected-product">
         <div class="selected-product-images">
-          <img id="product-image1"
+          <img
+            id="product-image-1"
             src="Selected femme/16074482_Sundress_773866_003.jpg"
             alt="Dame med langærmet striktrøje i farven Sundress"
           />
           <img
-            src="Selected femme/16074482_Sundress_773866_001.jpg"
-            alt="Langærmet striktrøje på i farven Sundress"
+            id="product-image-2"
+            src="Selected femme/16074482_Sundress_773866_003.jpg"
+            alt="Dame med langærmet striktrøje i farven Sundress"
           />
         </div>
         
@@ -85,15 +87,11 @@
           <div class="button-container">
             <button
               class="color-button red"
-              onclick="changeImage('Selected femme/16074482_Sundress_773866_003.jpg')"
-            ></button>
-            <button
-              class="color-button red"
-              onclick="changeImage('Selected femme/16074482_Sundress_773866_003.jpg')"
+              onclick="changeImage('Selected femme/16074482_Sundress_773866_003.jpg', 'Selected femme/16074482_Sundress_773866_001.jpg', 'Sundress')"
             ></button>
             <button
               class="color-button blue"
-              onclick="changeImage('Selected femme/lyserødsweater')"
+              onclick="changeImage('Selected femme/lyserødsweater.jpg', 'Selected femme/lyserødsweater2.jpg', 'Bleached Mauve')"
             ></button>
           </div>
           <!-- Størrelsesvalg som knapper -->
@@ -106,6 +104,9 @@
             <button type="button" class="size-button" data-size="L">XL</button>
           </div>
           <button class="selected-add-to-cart">FØJ TIL KURV</button>
+          
+          </button>
+          </button>
         </div>
       </section>
     </main>
