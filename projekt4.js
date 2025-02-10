@@ -77,7 +77,7 @@ function magnify(imgID, zoom) {
 
 // Execute the magnify function for both images
 magnify("product-image-1", 3);
-magnify("product-image-2", 3);
+
 
 //ZOOM EFFEKT SLUT
 
