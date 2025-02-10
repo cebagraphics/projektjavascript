@@ -259,10 +259,6 @@ footer {
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 119bb7d535e4fa533cdf8d1b353e2baf21b23454
 
 /* =============== FARVEKNAPPER / START =============== */
 .button-container {
@@ -290,48 +286,56 @@ footer {
 .blue {
     background-color: #f4d4dc;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 119bb7d535e4fa533cdf8d1b353e2baf21b23454
-  /* Slideshow */
-  * {box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif;}
-        .gallery-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px;
-        }
-        .gallery-item {
-            position: relative;
-            width: 200px;
-            height: 300px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-        }
-        .shop-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 3px;
-        }
+/* Slideshow container */
+.gallery-container {
+    display: flex;            /* Brug flexbox for at placere billederne ved siden af hinanden */
+    gap: 0;                   /* Ingen mellemrum mellem billederne */
+    overflow: hidden;         /* Skjul overskydende billeder, hvis de går ud over containeren */
+    width: 100%;              /* Sørg for, at containeren strækker sig over hele bredden */
+  }
+  
+  /* Hver billede-item */
+  .gallery-item {
+    position: relative;
+    flex: 0 0 auto;           /* Sørg for at billederne ikke skalerer og forbliver i samme størrelse */
+    width: 20%;               /* Giv hver billede-item en bredde på 20% af containerens bredde (5 billeder = 100%) */
+  }
+  
+  /* Billederne */
+  .gallery-item img {
+    width: 100%;              /* Sørg for at billederne fylder hele bredden af deres container */
+    height: 100%;             /* Sørg for at billederne ikke bliver forvrænget */
+    object-fit: cover;        /* Sørg for at billederne fylder containeren korrekt uden forvrængning */
+    border-radius: 0;         /* Fjern rundede kanter */
+  }
+  
+  /* Tekst overlay */
+  .overlay {
+    position: absolute;
+    top: 10px;                /* Placer teksten tættere på toppen af billedet */
+    left: 10px;               /* Placer teksten til venstre */
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: 10;              /* Sørg for, at teksten er synlig oven på billedet */
+    text-transform: uppercase; /* Gør teksten til store bogstaver */
+    white-space: nowrap;      /* Sørg for at teksten ikke brydes */
+  }
+  
+  /* Shop Now knap */
+  .shop-btn {
+    position: absolute;
+    bottom: 10px;             /* Placer knappen nederst på billedet */
+    left: 10px;               /* Placer knappen til venstre */
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 10;              /* Sørg for, at knappen er synlig oven på billedet */
+    cursor: pointer;         /* Gør knappen interaktiv */
+  }
+  
+  .shop-btn:hover {
+    text-decoration: underline;  /* Understreg knappen ved hover */
+  }
