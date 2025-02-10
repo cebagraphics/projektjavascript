@@ -26,15 +26,16 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center; /* Centrerer indholdet */
 }
 
 .product {
-    padding: 10px;
-    width: calc(33.333% - 20px);
+    width: calc(25% - 20px); /* 4 billeder pr. række */
     box-sizing: border-box;
     text-align: center;
 }
 
+/* Sørger for, at billederne er responsive */
 .product img {
     max-width: 100%;
     height: auto;
