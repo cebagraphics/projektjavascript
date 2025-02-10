@@ -345,26 +345,32 @@ footer {
 
 /* ZOOM EFFEKT SLUT */
 
+/* Stil containeren */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+
 /* Stil karussellen */
 .carousel {
   width: 80%;
-  max-width: 1000px;
-  margin: auto;
   overflow: hidden;
   position: relative;
 }
 
-/* Bevægende billeder */
+/* Track til billederne */
 .carousel-track {
   display: flex;
-  gap: 0; /* Ingen mellemrum mellem billeder */
-  width: 200%;
-  animation: scroll 10s linear infinite;
+  transition: transform 0.5s ease-in-out;
 }
 
 /* Hvert billede */
 .carousel-item {
-  flex: 0 0 20%;
+  min-width: 20%;
   position: relative;
 }
 
@@ -372,12 +378,7 @@ footer {
 .carousel-item img {
   width: 100%;
   height: auto;
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Gør midterbilledet større */
-.carousel-item:nth-child(3) img {
-  transform: scale(1.1);
+  display: block;
 }
 
 /* Tekst-overlay */
@@ -408,14 +409,31 @@ footer {
   color: white;
   text-decoration: none;
   align-self: flex-start;
+  transition: color 0.3s;
 }
 
-/* Animation for at flytte billederne */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* Hover-effekt på knappen */
+.shop-btn:hover {
+  color: #ff9900;
+}
+
+/* Pile-knapper */
+.prev-btn, .next-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  z-index: 100;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
