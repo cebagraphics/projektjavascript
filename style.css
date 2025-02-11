@@ -406,25 +406,34 @@ table {
 
 
 /* ZOOM EFFEKT START */
-* {
-  box-sizing: border-box;
-}
-.selected-product-images img {
-  max-width: auto; /* Billederne tager størrelsen af deres container */
-  height: auto; /* Forholdet mellem bredde og højde bevares */
-}
-.img-magnifier-glass {
-  position: absolute;
-  border: 1px solid #b4b4b4;
-  border-radius: 50%;
-  cursor: none;
-  /* Set the size of the magnifier glass */
-  width: 120px;
-  height: 120px;
-  display: none; /* Skjul glasset indtil musen er over billedet */
+#product-image-1-container {
+  float: left;
+  max-width: 30%;
+  height: auto;
+  padding: 2px;
+  margin-right: 40px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
 }
 
+#product-image-1 {
+  max-width: 100%;
+}
+
+#lens {
+z-index: 2;
+position: absolute;
+height: 125px;
+width: 125px;
+border: 2px solid  rgb(128, 128, 128);
+border-radius: 50%;
+cursor: none;
+background-repeat: no-repeat;
+}
 /* ZOOM EFFEKT SLUT */
+
 
 /* Stil containeren */
 .carousel-container {

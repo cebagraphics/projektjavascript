@@ -1,85 +1,70 @@
 
-// ZOOM EFFEKT
+// ZOOM EFFEKT START
+document.getElementById('product-image-1-container').addEventListener('mouseover', function(){
+  imageZoom('product-image-1')
+  document.getElementById('lens').style.display = 'block'
+})
 
-// ZOOM EFFEKT
+document.getElementById('product-image-1-container').addEventListener('mouseout', function(){
+  document.getElementById('lens').style.display = 'none'
+})
 
-function magnify(imgID, zoom) {
-  var img, glass, w, h, bw;
-  img = document.getElementById(imgID);
+function imageZoom(imgID){
+let img = document.getElementById(imgID)
+let lens = document.getElementById('lens')
 
-  // Create magnifier glass
-  glass = document.createElement("DIV");
-  glass.setAttribute("class", "img-magnifier-glass");
+lens.style.backgroundImage = "url('" + img.src + "')";
 
-  // Insert magnifier glass
-  img.parentElement.insertBefore(glass, img);
+let ratio = 3
 
-  // Set background properties for the magnifier glass
-  glass.style.backgroundImage = "url('" + img.src + "')";
-  glass.style.backgroundRepeat = "no-repeat";
-  glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
-  bw = 3;
-  w = glass.offsetWidth / 2;
-  h = glass.offsetHeight / 2;
+lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
 
-  // Show the magnifier glass when hovering over the image
-  img.addEventListener("mouseenter", function () {
-    glass.style.display = "block";
-  });
+img.addEventListener("mousemove", moveLens)
+lens.addEventListener("mousemove", moveLens)
 
-  // Hide the magnifier glass when the mouse leaves the image
-  img.addEventListener("mouseleave", function () {
-    glass.style.display = "none";
-  });
+function moveLens(){
+  let pos = getCursor()
 
-  // Execute a function when someone moves the magnifier glass over the image
-  glass.addEventListener("mousemove", moveMagnifier);
-  img.addEventListener("mousemove", moveMagnifier);
+  let positionLeft = pos.x - (lens.offsetWidth / 2)
+  let positionTop = pos.y - (lens.offsetHeight / 2)
 
-  // And also for touch screens
-  glass.addEventListener("touchmove", moveMagnifier);
-  img.addEventListener("touchmove", moveMagnifier);
-
-  function moveMagnifier(e) {
-    var pos, x, y;
-    // Prevent any other actions that may occur when moving over the image
-    e.preventDefault();
-    // Get the cursor's x and y positions
-    pos = getCursorPos(e);
-    x = pos.x;
-    y = pos.y;
-    // Prevent the magnifier glass from being positioned outside the image
-    if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
-    if (x < w / zoom) {x = w / zoom;}
-    if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
-    if (y < h / zoom) {y = h / zoom;}
-    // Set the position of the magnifier glass
-    glass.style.left = (x - w) + "px";
-    glass.style.top = (y - h) + "px";
-    // Display what the magnifier glass "sees"
-    glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+  if(positionLeft < 0){
+      positionLeft = 0
+  }
+  if(positionTop < 0){
+      positionTop = 0
   }
 
-  function getCursorPos(e) {
-    var a, x = 0, y = 0;
-    e = e || window.event;
-    // Get the x and y positions of the image
-    a = img.getBoundingClientRect();
-    // Calculate the cursor's x and y coordinates, relative to the image
-    x = e.pageX - a.left;
-    y = e.pageY - a.top;
-    // Consider any page scrolling
-    x = x - window.pageXOffset;
-    y = y - window.pageYOffset;
-    return {x : x, y : y};
+  if(positionLeft > img.width - lens.offsetWidth ){
+      positionLeft = img.width - lens.offsetWidth
   }
+  if(positionTop > img.height - lens.offsetHeight){
+      positionTop = img.height - lens.offsetHeight
+  }
+
+  lens.style.left = positionLeft + 'px';
+  lens.style.top = positionTop + 'px';
+
+  lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' + (pos.y * ratio) + 'px'
 }
 
-// Execute the magnify function for both images
-magnify("product-image-1", 3);
+function getCursor(){
+  let e = window.event
+  let bounds = img.getBoundingClientRect()
 
+  let x = e.pageX - bounds.left
+  let y = e.pageY - bounds.top
+ 
+  x = x - window.pageXOffset;
+  y = y - window.pageYOffset;
+  return {'x':x, 'y':y}
 
+}}
+
+imageZoom('product-image-1')
+document.getElementById('lens').style.display = 'none';
 //ZOOM EFFEKT SLUT
+
 
 //Skift farve på sweater //
 document.addEventListener("DOMContentLoaded", function() {
