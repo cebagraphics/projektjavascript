@@ -234,7 +234,13 @@ footer {
     cursor: pointer;
     font-size: 15px;
     margin-top: 10px;
+     cursor: pointer;
   
+  }
+
+  .cart-count {
+    font-size: 13px;
+    color: #333;
   }
 
 
@@ -273,8 +279,6 @@ footer {
   color: #fff;
   border-color: #333;
 }
-
-
 
 .selected-add-to-cart:hover {
   background-color: #f4f4f4; /* Let grå baggrund når man hoverer */
