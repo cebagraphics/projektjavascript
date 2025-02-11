@@ -440,14 +440,16 @@ background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90%;
+  width: 100%;
+  max-width: 1200px; /* Begræns bredden */
   margin: auto;
   position: relative;
+  overflow: hidden;
 }
 
 /* Selve karusellen */
 .carousel {
-  width: 80%;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -456,11 +458,13 @@ background-repeat: no-repeat;
 .carousel-track {
   display: flex;
   transition: transform 1s ease-in-out;
+  width: 500%; /* Gør plads til gentagne billeder */
 }
 
 /* Karusel-element */
 .carousel-item {
-  min-width: 20%;
+  flex: 0 0 20%; /* Sørger for at alle billeder har samme bredde */
+  max-width: 250px; /* Fast bredde */
   position: relative;
   text-align: left;
 }
@@ -468,7 +472,7 @@ background-repeat: no-repeat;
 /* Sikrer at billederne er samme størrelse */
 .carousel-item img {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
   display: block;
 }
@@ -483,12 +487,12 @@ background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
+  padding: 10px;
 }
 
 /* Materiale navn øverst til venstre */
 .material-name {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   color: white;
   text-transform: uppercase;
@@ -496,13 +500,14 @@ background-repeat: no-repeat;
 
 /* Shop Now-knappen nederst til venstre */
 .shop-btn {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: white;
   text-decoration: none;
   align-self: flex-start;
-  position: relative;
-  padding-bottom: 5px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 
 /* Hover-effekt (hvid streg under) */
@@ -533,8 +538,8 @@ background-repeat: no-repeat;
   z-index: 100;
 }
 
-.prev-btn { left: 0; }
-.next-btn { right: 0; }
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
 
 .prev-btn:hover, .next-btn:hover {
   background: rgba(0, 0, 0, 0.8);
