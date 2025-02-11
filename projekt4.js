@@ -1,13 +1,12 @@
 
 // ZOOM EFFEKT START
-
 document.getElementById('product-image-1-container').addEventListener('mouseover', function(){
   imageZoom('product-image-1')
-  document.getElementById('lens').style.display = 'block' // Gør linsen synlig
+  document.getElementById('lens').style.display = 'block'
 })
 
 document.getElementById('product-image-1-container').addEventListener('mouseout', function(){
-  document.getElementById('lens').style.display = 'none' // Skjul linsen når musen forlader
+  document.getElementById('lens').style.display = 'none'
 })
 
 function imageZoom(imgID){
@@ -25,7 +24,6 @@ lens.addEventListener("mousemove", moveLens)
 
 function moveLens(){
   let pos = getCursor()
-  //console.log('pos:', pos)
 
   let positionLeft = pos.x - (lens.offsetWidth / 2)
   let positionTop = pos.y - (lens.offsetHeight / 2)
@@ -44,8 +42,6 @@ function moveLens(){
       positionTop = img.height - lens.offsetHeight
   }
 
-
-
   lens.style.left = positionLeft + 'px';
   lens.style.top = positionTop + 'px';
 
@@ -55,8 +51,6 @@ function moveLens(){
 function getCursor(){
   let e = window.event
   let bounds = img.getBoundingClientRect()
-
-  //console.log ('e:', e, 'bounds:', bounds)
 
   let x = e.pageX - bounds.left
   let y = e.pageY - bounds.top
@@ -69,8 +63,6 @@ function getCursor(){
 
 imageZoom('product-image-1')
 document.getElementById('lens').style.display = 'none';
-
-
 //ZOOM EFFEKT SLUT
 
 
