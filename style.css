@@ -441,7 +441,7 @@ background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1200px; /* Begræns bredden */
+  max-width: 1200px;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -458,13 +458,14 @@ background-repeat: no-repeat;
 .carousel-track {
   display: flex;
   transition: transform 1s ease-in-out;
-  width: 500%; /* Gør plads til gentagne billeder */
+  will-change: transform;
 }
 
 /* Karusel-element */
 .carousel-item {
-  flex: 0 0 20%; /* Sørger for at alle billeder har samme bredde */
-  max-width: 250px; /* Fast bredde */
+  flex: 0 0 auto;
+  width: 250px; /* Ens størrelse */
+  height: 200px;
   position: relative;
   text-align: left;
 }
@@ -472,7 +473,7 @@ background-repeat: no-repeat;
 /* Sikrer at billederne er samme størrelse */
 .carousel-item img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
