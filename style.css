@@ -160,16 +160,13 @@ footer {
   text-align: center;
   margin-top: 20px;
   float: right;
-}
-
-.social-table th {
-  padding: 10px;
+  padding-right: 50px;
 }
 
 .social-icon {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px;
+  width: 25px;
+  height: 25px;
+  margin: 0;
   transition: transform 0.3s ease;
 }
 
@@ -179,7 +176,7 @@ footer {
 
 /* Copyright tekst */
 .copy {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
 }
 
