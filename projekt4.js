@@ -22,8 +22,8 @@ lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) +
 img.addEventListener("mousemove", moveLens)
 lens.addEventListener("mousemove", moveLens)
 
-function moveLens(){
-  let pos = getCursor()
+function moveLens(e){
+  let pos = getCursor(e)
 
   let positionLeft = pos.x - (lens.offsetWidth / 2)
   let positionTop = pos.y - (lens.offsetHeight / 2)
@@ -48,9 +48,8 @@ function moveLens(){
   lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' + (pos.y * ratio) + 'px'
 }
 
-function getCursor(){
-  let e = window.event
-  let bounds = img.getBoundingClientRect()
+function getCursor(e) {
+  let bounds = img.getBoundingClientRect();
 
   let x = e.pageX - bounds.left
   let y = e.pageY - bounds.top
@@ -76,42 +75,50 @@ document.addEventListener("DOMContentLoaded", function() {
     window.changeImage = changeImage;
 });
 
-const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-let index = 0;
-const items = document.querySelectorAll('.carousel-item');
-const totalItems = items.length;
 
-// Automatisk rulning
-function autoSlide() {
-  index++;
-  updateCarousel();
-}
+// KARUSEL
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const items = document.querySelectorAll('.carousel-item');
+  let index = 0;
+  const totalItems = items.length;
 
-let slideInterval = setInterval(autoSlide, 3000); // Skift hvert 3. sekund
-
-// Opdaterer karussellen
-function updateCarousel() {
-  if (index >= totalItems) {
-    index = 0;
-  } else if (index < 0) {
-    index = totalItems - 1;
+  function updateCarousel() {
+      if (index >= totalItems) {
+          index = 0;
+      } else if (index < 0) {
+          index = totalItems - 1;
+      }
+      track.style.transform = `translateX(-${index * 20}%)`;
   }
-  track.style.transform = `translateX(-${index * 20}%)`;
-}
 
-// Knapper til manuel styring
-nextBtn.addEventListener('click', () => {
-  index++;
-  updateCarousel();
-  resetInterval();
-});
+  function autoSlide() {
+      index++;
+      updateCarousel();
+  }
 
-prevBtn.addEventListener('click', () => {
-  index--;
-  updateCarousel();
-  resetInterval();
+  let slideInterval = setInterval(autoSlide, 3000);
+
+  function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(autoSlide, 3000);
+  }
+
+  if (nextBtn && prevBtn) {
+      nextBtn.addEventListener('click', () => {
+          index++;
+          updateCarousel();
+          resetInterval();
+      });
+
+      prevBtn.addEventListener('click', () => {
+          index--;
+          updateCarousel();
+          resetInterval();
+      });
+  }
 });
 
 // Stopper og genstarter automatisk rulning ved manuel navigation
@@ -131,15 +138,15 @@ shopNowButtons.forEach(button => {
 });
 
 
-
-// Skifter billedern når man hover med musen
+// Skifter billederne når man hover med musen
 function changeImage(element, newSrc) {
-    element.src = newSrc;
+  element.src = newSrc;
 }
 
 function restoreImage(element, originalSrc) {
-    element.src = originalSrc;
+  element.src = originalSrc;
 }
+
 
 
 // FØJ TIL KURV START
@@ -153,3 +160,5 @@ shirt.push(theShirt);
 console.log(shirt);
 
 // FØJ TIL KURV SLUT
+
+
