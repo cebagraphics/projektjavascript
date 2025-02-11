@@ -239,7 +239,7 @@ footer {
   
   }
 
-  .cart-count {
+ .cart {
     font-size: 13px;
     color: #333;
   }
@@ -277,15 +277,14 @@ footer {
 
 .size-button.selected {
   background-color: #333;
-  color: #fff;
-  border-color: #333;
+    color: #fff;
+    border-color: #333;
 }
 
 .selected-add-to-cart:hover {
   background-color: #f4f4f4; /* Let grå baggrund når man hoverer */
   border-color: #000; /* Forstærket sort kant ved hover */
 }
-
 
   /* Footer */
   .selected-footer {
