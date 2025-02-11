@@ -260,11 +260,14 @@ table {
   
   }
 
- .cart {
+ #cart-count {
     font-size: 13px;
     color: #333;
   }
 
+#navbar-cart-count {
+  padding-left: -100px;
+}
 
 /* Størrelsesvalg som knapper */
 .selected-size-label {
@@ -297,15 +300,42 @@ table {
 }
 
 .size-button.selected {
-  background-color: #333;
-    color: #fff;
-    border-color: #333;
+  background-color: #fff; /* Grønt for valgt størrelse */
+  color: #000; /* Hvid tekst på den valgte knap */
+  border: 2px solid #000; /* Lidt mørkere kant for at fremhæve valget */
 }
+
 
 .selected-add-to-cart:hover {
   background-color: #f4f4f4; /* Let grå baggrund når man hoverer */
   border-color: #000; /* Forstærket sort kant ved hover */
 }
+
+/* Stil for toast-notifikation */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Toast visible */
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 
   /* Footer */
   .selected-footer {
