@@ -570,7 +570,7 @@ table {
 .favorite-button {
     cursor: pointer;
     font-size: 20px;
-    color: gray; /* Standard farve */
+    color: rgb(0, 0, 0);
     transition: color 0.3s;
 }
 
