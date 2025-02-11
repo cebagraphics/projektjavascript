@@ -18,6 +18,17 @@ h3 {
   font-weight: normal;
   font-size: 13px;
   float: left;
+  margin: 0;
+  padding-top: 3px;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 12px;
+    float: left;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 7px;
 }
 
 .intro {
@@ -100,6 +111,16 @@ footer {
     text-align: center;
 }
 
+table {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.hjerte {
+    width: 26px;
+    float: right;
+}
 
 /* =============== NAVIGATION BAR / START =============== */
 .navbar {
@@ -235,9 +256,14 @@ footer {
     cursor: pointer;
     font-size: 15px;
     margin-top: 10px;
+     cursor: pointer;
   
   }
 
+ #cart-count {
+    font-size: 13px;
+    color: #333;
+  }
 
 /* Størrelsesvalg som knapper */
 .selected-size-label {
@@ -270,16 +296,40 @@ footer {
 }
 
 .size-button.selected {
-  background-color: #333;
-  color: #fff;
-  border-color: #333;
+  background-color: #fff; /* Grønt for valgt størrelse */
+  color: #000; /* Hvid tekst på den valgte knap */
+  border: 2px solid #000; /* Lidt mørkere kant for at fremhæve valget */
 }
-
 
 
 .selected-add-to-cart:hover {
   background-color: #f4f4f4; /* Let grå baggrund når man hoverer */
   border-color: #000; /* Forstærket sort kant ved hover */
+}
+
+/* Stil for toast-notifikation */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Toast visible */
+.toast.show {
+  visibility: visible;
+  opacity: 1;
 }
 
 
@@ -323,6 +373,36 @@ footer {
 
 .beige {
     background-color: #cbb394;
+}
+
+.eggwhite {
+    background-color: #F0EAD6;
+}
+
+.grey {
+    background-color: #bbbbbb;
+}
+
+.pink {
+    background-color: #d689c4;
+}
+
+.darkpink {
+    background-color: #a85692; 
+}
+
+.lightblue {
+    background-color: #7992d1;
+}
+
+
+.smallbutton {
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    float: left;
+    margin-right: 7px;
 }
 
 
@@ -458,4 +538,51 @@ background-repeat: no-repeat;
 
 .prev-btn:hover, .next-btn:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+/* =============== FAVORITTER / START =============== */
+.favorite-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    list-style: none;
+    max-width: 200px;
+}
+
+.favorite-dropdown li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.favorite-dropdown img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.show-dropdown {
+    display: block;
+}
+
+.favorite-button.active {
+    filter: grayscale(50%);
+    opacity: 0.6;
+}
+
+
+.favorite-button {
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s;
+}
+
+.favorite-button.favorited {
+    color: red; /* Rødt hjerte når tilføjet */
 }
