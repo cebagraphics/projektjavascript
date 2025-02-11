@@ -265,10 +265,6 @@ table {
     color: #333;
   }
 
-#navbar-cart-count {
-  padding-left: -100px;
-}
-
 /* Størrelsesvalg som knapper */
 .selected-size-label {
   font-size: 13px;
