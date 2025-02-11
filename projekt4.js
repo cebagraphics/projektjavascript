@@ -157,18 +157,10 @@ function restoreImage(element, originalSrc) {
 }
 
 
-// Sikrer, at størrelsesknapperne fungerer
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".size-button").forEach(button => {
-        button.addEventListener("click", function () {
-            // Fjerner "active" fra alle størrelsesknapper
-            document.querySelectorAll(".size-button").forEach(btn => btn.classList.remove("active"));
+// FØJ TIL KURV START
+let shirt = []; 
 
-            // Tilføjer "active" til den valgte knap
-            this.classList.add("active");
-        });
-    });
-});
+let theShirt = { name: "LANGÆRMET TRØJE", price: 599.95 };
 
 
 
@@ -227,3 +219,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateFavorites(); // Indlæs favoritter fra localStorage ved load
 });
+shirt.push(theShirt);
+
+console.log(shirt);
+
+// FØJ TIL KURV SLUT
