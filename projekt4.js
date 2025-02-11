@@ -157,58 +157,14 @@ function restoreImage(element, originalSrc) {
 }
 
 
-// Funktion til at tilføje til favoritter //
-document.addEventListener("DOMContentLoaded", function () {
-    let favoriteList = JSON.parse(localStorage.getItem("favorites")) || [];
-    const favoriteCount = document.querySelector(".favorite-count");
-    const favoriteDropdown = document.querySelector(".favorite-dropdown");
+// FØJ TIL KURV START
+let shirt = []; 
 
-    // Opdater favoritlisten i UI
-    function updateFavorites() {
-        favoriteDropdown.innerHTML = "";
-        favoriteList.forEach(product => {
-            const li = document.createElement("li");
-            li.innerHTML = `<img src="${product.image}" alt="${product.name}"><span>${product.name}</span>`;
-            favoriteDropdown.appendChild(li);
-        });
-        favoriteCount.textContent = favoriteList.length;
+let theShirt = { name: "LANGÆRMET TRØJE", price: 599.95 };
 
-        // Opdater hjerte-styling på produkter
-        document.querySelectorAll(".favorite-button").forEach(button => {
-            let product = JSON.parse(button.getAttribute("data-product"));
-            if (favoriteList.some(item => item.name === product.name)) {
-                button.classList.add("favorited");
-                button.innerHTML = "&#10084;"; // Fyldt hjerte ♥
-            } else {
-                button.classList.remove("favorited");
-                button.innerHTML = "&#9825;"; // Tomt hjerte ♡
-            }
-        });
-    }
 
-    // Tilføj klik-event til favorit-knapper
-    document.querySelectorAll(".favorite-button").forEach(button => {
-        button.addEventListener("click", function () {
-            let product = JSON.parse(this.getAttribute("data-product"));
+shirt.push(theShirt);
 
-            // Tjek om produktet allerede er i listen
-            const index = favoriteList.findIndex(item => item.name === product.name);
-            if (index === -1) {
-                favoriteList.push(product);
-            } else {
-                favoriteList.splice(index, 1); // Fjern hvis det allerede er tilføjet
-            }
+console.log(shirt);
 
-            localStorage.setItem("favorites", JSON.stringify(favoriteList));
-            updateFavorites();
-        });
-    });
-
-    // Åbn dropdown ved klik på favoritikonet
-    document.getElementById("favorite-icon").addEventListener("click", function (e) {
-        e.preventDefault();
-        favoriteDropdown.classList.toggle("show-dropdown");
-    });
-
-    updateFavorites(); // Indlæs favoritter fra localStorage ved load
-});
+// FØJ TIL KURV SLUT
