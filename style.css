@@ -106,10 +106,54 @@ font-size: 13px;
 }
 
 footer {
-    background-color: #f8f8f8;
-    padding: 10px;
-    text-align: center;
+  background-color: #f4f4f4;
+  padding: 80px 0;
+  font-family: Arial, sans-serif;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.footer-section ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.copy {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.social-icon {
+  width: 25px;
+}
+
+.social-table {
+  width: 35%;
+  float: right;
+  padding-right: 40px;
+  padding-top: 30px;
+}
+
 
 table {
     padding: 0;
@@ -332,14 +376,6 @@ table {
   opacity: 1;
 }
 
-  /* Footer */
-  .selected-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #fff;
-    margin-top: 12px;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-  }
 /* =============== PRODUKTSIDE / SLUT =============== */
 
 
