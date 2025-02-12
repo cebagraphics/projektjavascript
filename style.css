@@ -192,6 +192,18 @@ table {
     float: right;
 }
 
+.hjerte2 {
+  width: 35px;
+  float: right;
+  padding-right: 6px;
+  padding-left: 4px;
+  padding-top: 6px;
+  padding-bottom: 7px;
+  margin-right: 30px;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+
 #top-bar {
   background-color: black;
   color: white;
