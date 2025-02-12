@@ -64,29 +64,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   // CARROUSEL START
-document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector('.carousel-track');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  const items = document.querySelectorAll('.carousel-item');
-  let index = 0;
-  const totalItems = items.length;
-
-  function updateCarousel() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const items = document.querySelectorAll('.carousel-item');
+    const itemWidth = 288; // Bredde af hvert billede (som i din CSS)
+    const totalItems = items.length;
+    let index = 0;
+  
+    function updateCarousel() {
+      // Forhindrer at gå ud over det første og sidste billede
       if (index >= totalItems) {
-          index = 0;
+        index = totalItems - 1;
       } else if (index < 0) {
-          index = totalItems - 1;
+        index = 0;
       }
-      track.style.transform = `translateX(-${index * 20}%)`;
-  }
+  
+      // Justerer transformeringen baseret på itemWidth
+      track.style.transform = `translateX(-${index * itemWidth}px)`;
+    }
 
+  /*
   function autoSlide() {
       index++;
       updateCarousel();
   }
 
   let slideInterval = setInterval(autoSlide, 3000);
+*/
 
   function resetInterval() {
       clearInterval(slideInterval);
@@ -94,18 +100,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (nextBtn && prevBtn) {
-      nextBtn.addEventListener('click', () => {
-          index++;
-          updateCarousel();
-          resetInterval();
-      });
+    nextBtn.addEventListener('click', () => {
+        if (index < totalItems - 1) { // Forhindrer at gå forbi sidste billede
+            index++;
+            updateCarousel();
+            resetInterval();
+        }
+    });
 
-      prevBtn.addEventListener('click', () => {
-          index--;
-          updateCarousel();
-          resetInterval();
-      });
-  }
+    prevBtn.addEventListener('click', () => {
+        if (index > 0) { // Forhindrer at gå forbi første billede
+            index--;
+            updateCarousel();
+            resetInterval();
+        }
+    });
+}
 
   // Håndter klik på "SHOP NOW"-knappen (for at vise URL eller eventuelt en modal)
   const shopNowButtons = document.querySelectorAll('.shop-btn');
@@ -113,9 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener('click', (event) => {
           event.preventDefault(); // Forhindrer standardlinkadfærd
           // Åbn en ny side, når knappen klikkes
-          window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
+          window.open('produktside.html', '_blank'); // Erstat med din egen URL
       });
   });
+
     // CARROUSEL SLUT
 
 

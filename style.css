@@ -18,7 +18,7 @@ header {
 }
 
 main {
-  padding: 20px;
+  padding: 0px 20px;
 }
 
 h3 {
@@ -261,7 +261,7 @@ table {
     background: #fff;
     z-index: 1000;
     padding: 20px 0px;
-    padding-top: 60px;
+    padding-top: 50px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -561,7 +561,7 @@ background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 2000px;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -584,8 +584,8 @@ background-repeat: no-repeat;
 /* Karusel-element */
 .carousel-item {
   flex: 0 0 auto;
-  width: 250px; /* Ens størrelse */
-  height: 200px;
+  width: 288px; /* Ens størrelse */
+  height: 280px;
   position: relative;
   text-align: left;
 }
@@ -613,10 +613,11 @@ background-repeat: no-repeat;
 
 /* Materiale navn øverst til venstre */
 .material-name {
-  font-size: 1rem;
+  font-size: 24px;
   font-weight: 500;
   color: white;
   text-transform: uppercase;
+  margin: 35px;
 }
 
 /* Shop Now-knappen nederst til venstre */
@@ -627,8 +628,9 @@ background-repeat: no-repeat;
   text-decoration: none;
   align-self: flex-start;
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
   left: 10px;
+  margin: 35px;
 }
 
 /* Hover-effekt (hvid streg under) */
@@ -647,10 +649,11 @@ background-repeat: no-repeat;
 
 /* Pile-knapper */
 .prev-btn, .next-btn {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   color: white;
   border: none;
-  padding: 10px 15px;
+  border-radius: 40px;
+  padding: 10px 10px;
   cursor: pointer;
   position: absolute;
   top: 50%;
