@@ -585,7 +585,7 @@ background-repeat: no-repeat;
 .carousel-item {
   flex: 0 0 auto;
   width: 288px; /* Ens størrelse */
-  height: 280px;
+  height: 290px;
   position: relative;
   text-align: left;
 }
