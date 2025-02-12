@@ -63,11 +63,13 @@
                 <span class="favorite-count">0</span>
                 <ul class="favorite-dropdown"></ul>
             </div>
-            </li>
             <li class="navbar__action-item">
-              <a href="#"
-                ><img src="Selected femme/Kurvikon.png" alt="Kurv"
-              /></a>
+              <div>
+                <a href=""
+                  ><img src="Selected femme/Kurvikon.png" alt="Kurv"
+                /></a>
+                <span id="cart-count">0</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -126,13 +128,15 @@
 
           <img class="hjerte2 favorite-button" data-product='{"name": "LANGÆRMET STRIKTRØJE", "price": "599,95 kr", "image": "Selected femme/16074482_Sundress_773866_003.jpg"}' src="Selected femme/Hjerteikon.png" alt="">
 
-          <!-- Kurv tæller -->
-          <p class="cart">Kurv: <span id="cart-count">0</span> varer</p>
+          <div id="toast" class="toast">
+            <p id="toast-message"></p>
+          </div>
         </div>
       </section>
-    
+    </main>
 
-    
+
+    <!-- Footer -->
     <footer>
       <div class="footer-container">
         <div class="footer-section">
