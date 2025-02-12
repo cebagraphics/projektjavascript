@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // FØJ TIL KURV START
   let shirt = [];
-  let theShirt = { name: "LANGÆRMET TRØJE", price: 599.95 };
+  let theShirt = { name: "LANGÆRMET STRIKTRØJE", price: 599.95 };
   let selectedSize = null;
 
   function addToCart() {
