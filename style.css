@@ -705,3 +705,7 @@ background-repeat: no-repeat;
 .favorite-container:hover .favorite-dropdown {
   display: block;
 }
+
+.favorite-count {
+  font-size: 13px;
+}
