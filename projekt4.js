@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
   container.addEventListener('mouseout', function() {
       lens.style.display = 'none';
   });
-  
+
   function imageZoom(imgID) {
       let img = document.getElementById(imgID);
       let lens = document.getElementById('lens');
@@ -58,10 +58,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   window.changeImage = changeImage;
 });
+// ZOOM EFFEKT SLUT
 
-// ZOOM EFFEKT 
 
-  // KARUSEL
+
+
+  // CARROUSEL START
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.querySelector('.carousel-track');
   const prevBtn = document.querySelector('.prev-btn');
@@ -114,8 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
           window.open('https://www.dinside.dk', '_blank'); // Erstat med din egen URL
       });
   });
+    // CARROUSEL SLUT
 
-  // SKIFTER BILLED NÅR MAN HOVER MED MUSEN
+
+
+
+  // SKIFTER BILLEDE HOVER EFFEKT START
   window.changeImageHover = function(element, newSrc) {
       element.src = newSrc;
   }
@@ -123,8 +129,12 @@ document.addEventListener("DOMContentLoaded", function () {
   window.restoreImage = function(element, originalSrc) {
       element.src = originalSrc;
   }
+  // SKIFTER BILLEDE HOVER EFFEKT SLUT
 
-  // SKIFTER BILLEDE NÅR MAN TRYKKER PÅ FARVEKNAP
+
+
+
+  // SKIFTER BILLEDE NÅR MAN TRYKKER PÅ FARVEKNAP START
   window.changeImage1 = function(imagePath) {
       document.getElementById('product1image').src = imagePath;
   }
@@ -145,10 +155,13 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('product7image').src = imagePath;
   }
 });
+  // SKIFTER BILLEDE NÅR MAN TRYKKER PÅ FARVEKNAP SLUT
 
 
+
+
+  // TOP BAR SOM SKIFTER TEKST START
 document.addEventListener("DOMContentLoaded", function () {
-  // TOP BAR SOM SKIFTER TEKST
   const messages = [
       "10% rabat på din næste ordre",
       "Bliv medlem af SELECTED+",
@@ -170,6 +183,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(changeMessage, 3500);
   changeMessage();
+    // TOP BAR SOM SKIFTER TEKST SLUT
+
+
+
 
   // FØJ TIL KURV START
   let shirt = [];
@@ -218,6 +235,9 @@ document.addEventListener("DOMContentLoaded", function () {
       addToCartButton.addEventListener("click", addToCart);
   }
 });
+  // FØJ TIL KURV SLUT
+
+
 
 
 // FAVOURITE KNAP START
@@ -293,6 +313,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateFavorites();
 });
-
-
 // FAVOURITE KNAP SLUT
