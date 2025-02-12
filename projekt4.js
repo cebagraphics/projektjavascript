@@ -177,30 +177,34 @@ function changeImage7(imagePath) {
 
 
 // TOP BAR SOM SKIFTER TEKST
-const messages = [
-  "10% rabat på din næste ordre",
-  "Bliv medlem af SELECTED+",
-  "Saml point og optjen belønninger",
-];
+document.addEventListener("DOMContentLoaded", function () {
+  const messages = [
+    "10% rabat på din næste ordre",
+    "Bliv medlem af SELECTED+",
+    "Saml point og optjen belønninger",
+  ];
+  
+  let currentMessageIndex = 0;
+  const changingTextElement = document.getElementById("changing-text");
+  
+  function changeMessage() {
+    // Fjern animationen og tekst
+    changingTextElement.classList.remove("show-text");
+  
+    // Vent lidt, før vi ændrer teksten
+    setTimeout(() => {
+      changingTextElement.textContent = messages[currentMessageIndex];
+      currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+  
+      // Tilføj animationen for at få den nye tekst til at fade ind og ud
+      changingTextElement.classList.add("show-text");
+    }, 50); // Vent kort tid, så animationen kan nulstilles før den starter
+  }
+  
+  setInterval(changeMessage, 3500); // Skifter tekst hvert 3.5 sekund
+  changeMessage(); // Initial tekst
+})
 
-let currentMessageIndex = 0;
-const changingTextElement = document.getElementById("changing-text");
-
-function changeMessage() {
-  // Fjern animationen og tekst
-  changingTextElement.classList.remove("show-text");
-
-  // Ændre teksten med det samme
-  changingTextElement.textContent = messages[currentMessageIndex];
-  currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-
-  // Tilføj animationen for at få den nye tekst til at fade ind og ud
-  changingTextElement.classList.add("show-text");
-}
-
-// Skift teksten straks og sæt interval for at skifte den
-setInterval(changeMessage, 3500); // Skifter tekst hvert 3.5 sekund
-changeMessage(); // Initial tekst
 
 
 
@@ -346,5 +350,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // FAVOURITE KNAP SLUT
-
-
