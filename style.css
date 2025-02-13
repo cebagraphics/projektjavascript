@@ -587,7 +587,7 @@ table {
 /* Karusel-element */
 .carousel-item {
   flex: 0 0 auto;
-  width: 288px; /* Ens størrelse */
+  width: 20%; /* Ens størrelse */
   height: 290px;
   position: relative;
   text-align: left;
