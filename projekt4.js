@@ -1,3 +1,14 @@
+// FARVE KNAP EFFEKT START
+document.addEventListener("DOMContentLoaded", function() {
+  function changeImage(imageSrc1, imageSrc2, newText) {
+      document.getElementById("product-image-1").src = imageSrc1;
+      document.getElementById("product-image-2").src = imageSrc2;
+      document.querySelector(".selected-color").textContent = newText;
+  }
+  window.changeImage = changeImage;
+});
+// FARVE KNAP EFFEKT SLUT
+
 // ZOOM EFFEKT START
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -118,8 +129,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
     // CARROUSEL SLUT
-
-
 
 
   // SKIFTER BILLEDE HOVER EFFEKT START
