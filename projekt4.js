@@ -1,69 +1,62 @@
-
 // ZOOM EFFEKT START
 document.addEventListener("DOMContentLoaded", function() {
-  let img = document.getElementById('product-image-1');
-  let lens = document.getElementById('lens');
-  let container = document.getElementById('product-image-1-container');
 
-  container.addEventListener('mouseover', function() {
-      imageZoom('product-image-1');
-      lens.style.display = 'block';
-  });
+    let images = [
+        { imgID: 'product-image-1', containerID: 'product-image-1-container' },
+        { imgID: 'product-image-2', containerID: 'product-image-2-container' }
+    ];
 
-  container.addEventListener('mouseout', function() {
-      lens.style.display = 'none';
-  });
-
-  function imageZoom(imgID) {
-      let img = document.getElementById(imgID);
-      let lens = document.getElementById('lens');
-
-      lens.style.backgroundImage = "url('" + img.src + "')";
-      let ratio = 3;
-      lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
-
-      img.addEventListener("mousemove", moveLens);
-      lens.addEventListener("mousemove", moveLens);
-
-      function moveLens(e) {
-          let pos = getCursor(e);
-          let positionLeft = pos.x - (lens.offsetWidth / 2);
-          let positionTop = pos.y - (lens.offsetHeight / 2);
-
-          if (positionLeft < 0) positionLeft = 0;
-          if (positionTop < 0) positionTop = 0;
-          if (positionLeft > img.width - lens.offsetWidth) positionLeft = img.width - lens.offsetWidth;
-          if (positionTop > img.height - lens.offsetHeight) positionTop = img.height - lens.offsetHeight;
-
-          lens.style.left = positionLeft + 'px';
-          lens.style.top = positionTop + 'px';
-          lens.style.backgroundPosition = "-" + (pos.x * ratio) + 'px -' + (pos.y * ratio) + 'px';
-      }
-
-      function getCursor(e) {
-          let bounds = img.getBoundingClientRect();
-          let x = e.pageX - bounds.left - window.pageXOffset;
-          let y = e.pageY - bounds.top - window.pageYOffset;
-          return { 'x': x, 'y': y };
-      }
-  }
-
-  imageZoom('product-image-1');
-  document.getElementById('lens').style.display = 'none';
-// ZOOM EFFEKT SLUT
+    images.forEach(image => {
+        let img = document.getElementById(image.imgID);
+        let container = document.getElementById(image.containerID);
 
 
+        let lens = document.createElement("div");
+        lens.classList.add("lens");
+        container.appendChild(lens);
 
+        container.addEventListener('mouseover', function() {
+            imageZoom(img, lens);
+            lens.style.display = 'block';
+        });
 
-// SKIFT BILLEDE START
-  function changeImage(imageSrc1, imageSrc2, newText) {
-      document.getElementById("product-image-1").src = imageSrc1;
-      document.getElementById("product-image-2").src = imageSrc2;
-      document.querySelector(".selected-color").textContent = newText;
-  }
-  window.changeImage = changeImage;
+        container.addEventListener('mouseout', function() {
+            lens.style.display = 'none';
+        });
+    });
+
+    function imageZoom(img, lens) {
+        lens.style.backgroundImage = `url('${img.src}')`;
+        let ratio = 3;
+        lens.style.backgroundSize = (img.width * ratio) + 'px ' + (img.height * ratio) + 'px';
+
+        img.addEventListener("mousemove", moveLens);
+        lens.addEventListener("mousemove", moveLens);
+
+        function moveLens(e) {
+            let pos = getCursor(e, img);
+            let positionLeft = pos.x - (lens.offsetWidth / 2);
+            let positionTop = pos.y - (lens.offsetHeight / 2);
+
+            if (positionLeft < 0) positionLeft = 0;
+            if (positionTop < 0) positionTop = 0;
+            if (positionLeft > img.width - lens.offsetWidth) positionLeft = img.width - lens.offsetWidth;
+            if (positionTop > img.height - lens.offsetHeight) positionTop = img.height - lens.offsetHeight;
+
+            lens.style.left = positionLeft + 'px';
+            lens.style.top = positionTop + 'px';
+            lens.style.backgroundPosition = `-${pos.x * ratio}px -${pos.y * ratio}px`;
+        }
+    }
+
+    function getCursor(e, img) {
+        let bounds = img.getBoundingClientRect();
+        let x = e.pageX - bounds.left - window.pageXOffset;
+        let y = e.pageY - bounds.top - window.pageYOffset;
+        return { x, y };
+    }
 });
-// SKIFT BILLEDE SLUT
+// ZOOM EFFEKT SLUT
 
 
 
@@ -89,6 +82,15 @@ document.addEventListener("DOMContentLoaded", function() {
       // Justerer transformeringen baseret på itemWidth
       track.style.transform = `translateX(-${index * itemWidth}px)`;
     }
+
+  /*
+  function autoSlide() {
+      index++;
+      updateCarousel();
+  }
+
+  let slideInterval = setInterval(autoSlide, 3000);
+*/
 
   function resetInterval() {
       clearInterval(slideInterval);

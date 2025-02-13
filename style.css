@@ -385,6 +385,7 @@ table {
     font-size: 15px;
     margin-top: 10px;
      cursor: pointer;
+     float: left;
   
   }
 
@@ -526,34 +527,36 @@ table {
 
 
 /* ZOOM EFFEKT START */
-#product-image-1-container {
+
+.product-image-container {
   float: left;
   max-width: 30%;
   height: auto;
-  padding: 2px;
   margin-right: 40px;
   margin-left: 10px;
   margin-bottom: 50px;
   z-index: 1;
-  position: relative;
+  position: relative; /* Sikrer at lens placeres relativt hertil */
 }
 
-#product-image-1 {
+.product-image-container img {
   max-width: 100%;
+  display: block; /* Fjerner uønsket mellemrum omkring billeder */
 }
 
-#lens {
-z-index: 2;
-position: absolute;
-height: 125px;
-width: 125px;
-border: 2px solid  rgb(128, 128, 128);
-border-radius: 50%;
-cursor: none;
-background-repeat: no-repeat;
+.lens {
+  position: absolute;
+  height: 125px;
+  width: 125px;
+  border: 2px solid rgb(128, 128, 128);
+  border-radius: 50%;
+  cursor: none;
+  background-repeat: no-repeat;
+  z-index: 100; /* Sørger for at lens altid er ovenpå */
+  display: none; /* Starter skjult */
 }
-/* ZOOM EFFEKT SLUT */
 
+/*ZOOM EFFEKT SLUT*/
 
 /* Karusel container */
 .carousel-container {
