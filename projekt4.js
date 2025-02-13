@@ -1,3 +1,4 @@
+
 // FARVE KNAP EFFEKT START
 document.addEventListener("DOMContentLoaded", function() {
   function changeImage(imageSrc1, imageSrc2, newText) {
@@ -8,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
   window.changeImage = changeImage;
 });
 // FARVE KNAP EFFEKT SLUT
+
+
+
 
 // ZOOM EFFEKT START
 document.addEventListener("DOMContentLoaded", function() {
