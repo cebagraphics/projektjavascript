@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     const items = document.querySelectorAll('.carousel-item');
-    const itemWidth = 291; // Bredde af hvert billede (som i din CSS)
+    const itemWidth = 290;; // Bredde af hvert billede (som i din CSS)
     const totalItems = items.length;
     let index = 0;
   
@@ -168,28 +168,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   // TOP BAR SOM SKIFTER TEKST START
-document.addEventListener("DOMContentLoaded", function () {
-  const messages = [
-      "10% rabat på din næste ordre",
-      "Bliv medlem af SELECTED+",
-      "Saml point og optjen belønninger",
-  ];
 
-  let currentMessageIndex = 0;
-  const changingTextElement = document.getElementById("changing-text");
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded, starting message rotation...");
 
-  function changeMessage() {
-      changingTextElement.classList.remove("show-text");
+    // Et array af objekter
+    const messages = [
+        { text: "10% rabat på din næste ordre" },
+        { text: "Bliv medlem af SELECTED+" },
+        { text: "Saml point og optjen belønninger" }
+    ];
 
-      setTimeout(() => {
-          changingTextElement.textContent = messages[currentMessageIndex];
-          currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-          changingTextElement.classList.add("show-text");
-      }, 50);
-  }
+    let currentMessageIndex = 0;
+    const changingTextElement = document.getElementById("changing-text");
 
-  setInterval(changeMessage, 3500);
-  changeMessage();
+    // Tjekker om elementet findes i DOM'en
+    if (!changingTextElement) {
+        console.warn("Element med id 'changing-text' blev ikke fundet.");
+        return;
+    }
+
+    function changeMessage() {
+        console.log("Skifter besked til index:", currentMessageIndex);
+
+        changingTextElement.classList.remove("show-text");
+
+        setTimeout(() => {
+            changingTextElement.textContent = messages[currentMessageIndex].text;
+            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+            changingTextElement.classList.add("show-text");
+        }, 50);
+    }
+
+    // Bruger et loop til at logge alle beskeder i arrayet (for debugging)
+    console.log("Tilgængelige beskeder:");
+    messages.forEach((msg, index) => {
+        console.log(`Besked ${index}: ${msg.text}`);
+    });
+
+    setInterval(changeMessage, 3500);
+    changeMessage();
+});
+
     // TOP BAR SOM SKIFTER TEKST SLUT
 
 
@@ -241,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (addToCartButton) {
       addToCartButton.addEventListener("click", addToCart);
   }
-});
+
   // FØJ TIL KURV SLUT
 
 
