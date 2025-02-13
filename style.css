@@ -201,11 +201,6 @@ table {
 .hjerte2 {
   width: 35px;
   float: right;
-  padding-right: 6px;
-  padding-left: 4px;
-  padding-top: 6px;
-  padding-bottom: 7px;
-  margin-right: 30px;
   margin-top: 10px;
   border: 1px solid black;
 }
@@ -380,9 +375,9 @@ table {
     background-color: #fff; /* Hvid baggrund */
     border: 1px solid #333; /* Sort kant */
     color: #333; /* Sort tekst */
-    padding: 14px 130px;
+    padding: 11px 130px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 13px;
     margin-top: 10px;
      cursor: pointer;
      float: left;
