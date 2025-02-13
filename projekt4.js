@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // CARROUSEL START
   document.addEventListener("DOMContentLoaded", function () {
+    console.log("Billedekarusellen er initialiseret!");
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
