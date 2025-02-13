@@ -315,8 +315,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   favoriteToggle.addEventListener("click", () => {
-      favoriteList.style.display = favoriteList.style.display === "block" ? "none" : "block";
-  });
+    console.log("Toggler favoritlisten. Nuværende display:", favoriteList.style.display);
+    favoriteList.style.display = favoriteList.style.display === "block" ? "none" : "block";
+});
+
 
   updateFavorites();
 });
