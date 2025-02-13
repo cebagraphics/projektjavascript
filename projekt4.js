@@ -84,15 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
       track.style.transform = `translateX(-${index * itemWidth}px)`;
     }
 
-  /*
-  function autoSlide() {
-      index++;
-      updateCarousel();
-  }
-
-  let slideInterval = setInterval(autoSlide, 3000);
-*/
-
   function resetInterval() {
       clearInterval(slideInterval);
       slideInterval = setInterval(autoSlide, 3000);
