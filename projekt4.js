@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-  // CARROUSEL START
+  // CARROUSEL START1
   document.addEventListener("DOMContentLoaded", function () {
     console.log("Billedekarusellen er initialiseret!");
     const track = document.querySelector('.carousel-track');
