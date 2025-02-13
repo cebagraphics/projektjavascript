@@ -50,7 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   imageZoom('product-image-1');
   document.getElementById('lens').style.display = 'none';
+// ZOOM EFFEKT SLUT
 
+
+
+
+// SKIFT BILLEDE START
   function changeImage(imageSrc1, imageSrc2, newText) {
       document.getElementById("product-image-1").src = imageSrc1;
       document.getElementById("product-image-2").src = imageSrc2;
@@ -58,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   window.changeImage = changeImage;
 });
-// ZOOM EFFEKT SLUT
+// SKIFT BILLEDE SLUT
 
 
 
