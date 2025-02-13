@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     const items = document.querySelectorAll('.carousel-item');
-    const itemWidth = 288; // Bredde af hvert billede (som i din CSS)
+    const itemWidth = 290; // Bredde af hvert billede (som i din CSS)
     const totalItems = items.length;
     let index = 0;
   
