@@ -1,7 +1,7 @@
 let shirt = []; // Array for at gemme produkter i kurven
 
 // Opret produktet
-let theShirt = { name: "LANGÆRMET TRØJE", price: 599.95 };
+let theShirt = { name: "LANGÆRMET STRIKTRØJE", price: 599.95 };
 
 // Variabel til at holde styr på den valgte størrelse
 let selectedSize = null;
